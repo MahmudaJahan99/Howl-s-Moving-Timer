@@ -1,0 +1,245 @@
+:root {
+    /* -------------------- COLOR PALETTE - Howl's Moving Castle Inspired -------------------- */
+
+    /* ---------- Primary Colors ---------- */
+    /* Forest Green */
+    --color-primary: #2d5f4f;
+    /* Lighter forest green for hovers */
+    --color-primary-light: #4a8b73;
+    /* Dark forest for text/contrast */
+    --color-primary-dark: #1a3a2f;
+
+
+    /* ---------- Secondary Colors ---------- */
+    /* Warm rust */
+    --color-secondary: #c97c5c;
+    /* Light rust for accents */
+    --color-secondary-light: #dfa47a;
+    /* Dark rust for depth */
+    --color-secondary-dark: #995d42;
+
+
+    /* ---------- Accent Colors ----------*/
+    /* Deep purple */
+    --color-accent-purple: #5c4b66;
+    /* Soft gold */
+    --color-accent-gold: #d4a574;
+    /* Ghibli blue */
+    --color-accent-blue: #6b9fb0;
+    /* Soft blush */
+    --color-accent-blush: #d9a5a0;
+
+
+    /* ---------- Backgrounds ---------- */
+    /* Soft cream - Main background */
+    --color-bg-primary: #f5f1e8;
+    /* Lighter cream - Secondary surfaces */
+    --color-bg-secondary: #faf7f1;
+    /* Warmer cream - Cards, sections */
+    --color-bg-tertiary: #ebe5d9;
+    /* Deep charcoal - High contrast dark mode bg */
+    --color-bg-contrast: #2c2420;
+
+
+    /* ---------- Text Colors ---------- */
+    /* Charcoal - Main text */
+    --color-text-primary: #2c2420;
+    /* Muted brown - Secondary text */
+    --color-text-secondary: #6b6560;
+    /* Light brown - Hints, disabled */
+    --color-text-tertiary: #a9a39a;
+    /* Cream on dark backgrounds */
+    --color-text-inverse: #f5f1e8;
+
+
+    /* ---------- Semantic Colors ---------- */
+    /* Soft green - Success state */
+    --color-success: #4a7d6b;
+    /* Warm orange-brown - Warning */
+    --color-warning: #c9884b;
+    /* Muted red - Error/danger */
+    --color-error: #b85c54;
+    /* Ghibli blue - Information */
+    --color-info: #6b9fb0;
+
+
+    /* ---------- Borders & Subtle Elements ---------- */
+    /* Soft border - Light dividers */
+    --color-border: #d9cfc2;
+    /* Rust border - Emphasis */
+    --color-border-accent: #c97c5c;
+    /* Very light - Disabled states */
+    --color-border-disabled: #e8dfd5;
+
+
+    /* ---------- Shadow colors ---------- */
+    --color-shadow: rgba(44, 36, 32, 0.1);
+    --color-shadow-dark: rgba(44, 36, 32, 0.2);
+
+    /* ---------- Transparent overlays ---------- */
+    --color-overlay-light: rgba(245, 241, 232, 0.95);
+    --color-overlay-dark: rgba(44, 36, 32, 0.85);
+
+    /* -------------------- TYPOGRAPHY -------------------- */
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Poppins",
+        "Roboto", "Helvetica Neue", sans-serif;
+    --font-serif: "DM Serif Display", Georgia, serif;
+    --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+    /* ---------- Font sizes ---------- */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+
+    /* ---------- Font weights ---------- */
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* ---------- Line heights ---------- */
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+    --line-height-loose: 2;
+
+
+    /* -------------------- SPACING -------------------- */
+    --space-0: 0;
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+
+    /* -------------------- BORDER RADIUS -------------------- */
+    /* 6px - Small elements */
+    --radius-sm: 0.375rem;
+    /* 8px - Buttons, small cards */
+    --radius-md: 0.5rem;
+    /* 14px - Cards, containers */
+    --radius-lg: 0.875rem;
+    /* 20px - Large cards, hero */
+    --radius-xl: 1.25rem;
+    /* 24px - Very large elements */
+    --radius-2xl: 1.5rem;
+    /* Fully rounded - Pills, circles */
+    --radius-full: 9999px;
+
+
+    /* -------------------- SHADOWS -------------------- */
+    --shadow-sm: 0 1px 2px var(--color-shadow);
+    --shadow-md: 0 4px 6px var(--color-shadow-dark);
+    --shadow-lg: 0 10px 15px var(--color-shadow-dark);
+    --shadow-xl: 0 20px 25px var(--color-shadow-dark);
+    --shadow-2xl: 0 25px 50px var(--color-shadow-dark);
+
+    /* ---------- Inset shadows for depth ---------- */
+    --shadow-inset-sm: inset 0 1px 2px var(--color-shadow);
+    --shadow-inset-md: inset 0 2px 4px var(--color-shadow);
+
+    /* -------------------- TRANSITIONS & ANIMATIONS -------------------- */
+    --transition-fast: 150ms;
+    --transition-base: 250ms;
+    --transition-slow: 350ms;
+    --transition-slower: 500ms;
+
+    --easing-linear: linear;
+    --easing-ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --easing-ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --easing-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --easing-smooth: cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* Ghibli-like bounce */
+
+    /* -------------------- BREAKPOINTS - Mobile-first responsive design -------------------- */
+    --breakpoint-xs: 20rem;
+    --breakpoint-sm: 24rem;
+    --breakpoint-md: 28rem;
+    --breakpoint-lg: 32rem;
+    --breakpoint-xl: 36rem;
+    --breakpoint-2xl: 42rem;
+    --breakpoint-3xl: 48rem;
+    --breakpoint-4xl: 56rem;
+    --breakpoint-5xl: 64rem;
+    --breakpoint-6xl: 80rem;
+
+    /* -------------------- Z-INDEX SCALE -------------------- */
+    --z-hide: -1;
+    --z-base: 0;
+    --z-dropdown: 10;
+    --z-sticky: 20;
+    --z-fixed: 30;
+    --z-modal-backdrop: 40;
+    --z-modal: 50;
+    --z-popover: 60;
+    --z-toast: 70;
+    --z-tooltip: 80;
+
+    /* -------------------- ANIMATION DURATIONS -------------------- */
+    --duration-100: 100ms;
+    --duration-200: 200ms;
+    --duration-300: 300ms;
+    --duration-500: 500ms;
+    --duration-700: 700ms;
+    --duration-1000: 1000ms;
+}
+
+/* -------------------- DARK MODE ADJUSTMENTS -------------------- */
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* ---------- Dark mode background ---------- */
+        --color-bg-primary: #1f1a17;
+        --color-bg-secondary: #2a241f;
+        --color-bg-tertiary: #342e27;
+
+        /* ---------- Dark mode text ---------- */
+        --color-text-primary: #f5f1e8;
+        --color-text-secondary: #d9cfc2;
+        --color-text-tertiary: #a9a39a;
+        --color-text-inverse: #2c2420;
+
+        /* ---------- Dark mode borders ---------- */
+        --color-border: #3d3530;
+        --color-border-accent: #d9a5a0;
+        --color-border-disabled: #2a241f;
+
+        /* ---------- Dark mode shadows ---------- */
+        --color-shadow: rgba(0, 0, 0, 0.3);
+        --color-shadow-dark: rgba(0, 0, 0, 0.4);
+
+        /* ---------- Dark mode Color accents ---------- */
+        --color-primary-light: #6baf91;
+        --color-secondary-light: #e8b89f;
+        --color-accent-gold: #e8c896;
+    }
+}
+
+/* -------------------- REDUCED MOTION for accessibility -------------------- */
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --transition-fast: 0ms;
+        --transition-base: 0ms;
+        --transition-slow: 0ms;
+        --transition-slower: 0ms;
+        --duration-100: 0ms;
+        --duration-200: 0ms;
+        --duration-300: 0ms;
+        --duration-500: 0ms;
+        --duration-700: 0ms;
+        --duration-1000: 0ms;
+    }
+}
