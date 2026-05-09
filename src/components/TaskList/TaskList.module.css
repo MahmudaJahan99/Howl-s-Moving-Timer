@@ -1,32 +1,19 @@
-/* ================== TASK LIST CONTAINER ================== */
-
+/* -------------------- TASK LIST CONTAINER -------------------- */
 .taskList {
   width: 100%;
   padding: var(--space-8) var(--space-4);
-  animation: fadeIn var(--duration-500) var(--easing-ease-out);
 }
 
-/* ================== TASK GRID ================== */
-
+/* -------------------- TASK GRID -------------------- */
 .taskGrid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-4);
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
-  animation: fadeIn var(--duration-700) var(--easing-ease-out);
 }
 
-/* ================== GRID ITEMS WITH STAGGER ================== */
-
-.taskGridItem {
-  animation: slideInUp calc(var(--duration-500) + (var(--item-index) * 50ms))
-    var(--easing-ease-out) backwards;
-  animation-fill-mode: both;
-}
-
-/* ================== LOADING STATE ================== */
-
+/* -------------------- LOADING STATE -------------------- */
 .loadingContainer {
   display: flex;
   align-items: center;
@@ -54,9 +41,7 @@
   animation: spin 1s linear infinite;
 }
 
-/* ================== RESPONSIVE DESIGN ================== */
-
-/* Medium screens - 2 columns */
+/* -------------------- RESPONSIVE DESIGN -------------------- */
 @media (min-width: 768px) {
   .taskGrid {
     grid-template-columns: repeat(2, 1fr);
@@ -64,32 +49,8 @@
   }
 }
 
-/* Large screens - 3 columns (but single column for better card view) */
-/* We keep it at 1-2 cols for better readability of task cards */
-@media (min-width: 1024px) {
-  .taskGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-6);
-  }
 
-  .taskList {
-    padding: var(--space-12) var(--space-8);
-  }
-}
-
-/* Extra large screens */
-@media (min-width: 1280px) {
-  .taskGrid {
-    grid-template-columns: 1fr;
-    max-width: 800px;
-  }
-
-  .taskList {
-    padding: var(--space-12);
-  }
-}
-
-/* ================== TABLET ADJUSTMENTS ================== */
+/* -------------------- TABLET ADJUSTMENTS -------------------- */
 
 @media (max-width: 768px) {
   .taskList {
@@ -101,7 +62,7 @@
   }
 }
 
-/* ================== MOBILE ADJUSTMENTS ================== */
+/* -------------------- MOBILE ADJUSTMENTS -------------------- */
 
 @media (max-width: 480px) {
   .taskList {
@@ -111,14 +72,9 @@
   .taskGrid {
     gap: var(--space-2);
   }
-
-  .taskGridItem {
-    animation: slideInUp calc(var(--duration-500) + (var(--item-index) * 30ms))
-      var(--easing-ease-out) backwards;
-  }
 }
 
-/* ================== DARK MODE ================== */
+/* -------------------- DARK MODE -------------------- */
 
 @media (prefers-color-scheme: dark) {
   .loadingSpinner {
@@ -126,8 +82,7 @@
   }
 }
 
-/* ================== ACCESSIBILITY - REDUCED MOTION ================== */
-
+/* -------------------- ACCESSIBILITY - REDUCED MOTION -------------------- */
 @media (prefers-reduced-motion: reduce) {
   .taskList {
     animation: none;
@@ -147,8 +102,7 @@
   }
 }
 
-/* ================== TASK CARD COMPONENT ================== */
-
+/* -------------------- TASK CARD COMPONENT -------------------- */
 .taskCard {
   position: relative;
   display: flex;
@@ -156,28 +110,102 @@
   justify-content: space-between;
   width: 100%;
   padding: 1.5rem;
-  background: transparent;
-  border: 2px solid var(--color-border);
   border-radius: var(--radius-lg);
-  cursor: pointer;
-  transition: all var(--transition-base) var(--easing-ease-out);
   overflow: hidden;
+  isolation: isolate;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.22);
 
-  /* For better interaction feel */
-  transform: translateZ(0);
-  will-change: transform, box-shadow;
+  /* GLASS BASE */
+  background:
+    linear-gradient(135deg,
+      rgba(255, 255, 255, 0.16),
+      rgba(255, 255, 255, 0.05)),
+    linear-gradient(135deg,
+      rgba(120, 220, 255, 0.18),
+      rgba(130, 255, 180, 0.14),
+      rgba(255, 255, 255, 0.08));
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.12),
+    inset 0 1px 1px rgba(255, 255, 255, 0.25),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.06);
+  transition:
+  transform var(--transition-base) cubic-bezier(.2, .8, .2, 1),
+  box-shadow var(--transition-base) var(--easing-ease-out),
+  border-color var(--transition-base) var(--easing-ease-out),
+  background var(--transition-base) var(--easing-ease-out);
+  transform: translateY(0) translateZ(0);
 
   /* Accessibility - remove default button styling */
   font: inherit;
   color: inherit;
 }
 
-/* ================== HOVER & FOCUS STATES ================== */
+.taskCard::before {
+  content: "";
+  position: absolute;
+  top: -120%;
+  left: -40%;
+  width: 60%;
+  height: 300%;
+  background:
+    linear-gradient(to right,
+      transparent,
+      rgba(255, 255, 255, 0.22),
+      transparent);
+  transform: rotate(25deg);
+  transition: transform 900ms ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cardBackground {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at top left,
+      rgba(120, 220, 255, 0.35),
+      transparent 45%),
+    radial-gradient(circle at bottom right,
+      rgba(140, 255, 200, 0.28),
+      transparent 45%),
+    linear-gradient(135deg,
+      rgba(255, 255, 255, 0.10),
+      rgba(255, 255, 255, 0.02));
+  opacity: 0.9;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* -------------------- HOVER & FOCUS STATES -------------------- */
+.taskCard:hover::before {
+  transform:
+    translateX(260%) rotate(25deg);
+}
 
 .taskCard:hover {
-  border-color: var(--task-color);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(45, 95, 79, 0.15);
+  transform:
+    translateY(-4px) scale(1.015);
+  border-color: rgba(255, 255, 255, 0.35);
+
+  background:
+    linear-gradient(135deg,
+      rgba(255, 255, 255, 0.22),
+      rgba(255, 255, 255, 0.08)),
+    linear-gradient(135deg,
+      rgba(120, 220, 255, 0.25),
+      rgba(130, 255, 180, 0.20),
+      rgba(255, 255, 255, 0.10));
+
+  box-shadow:
+    0 22px 45px rgba(0, 0, 0, 0.18),
+    0 0 30px rgba(120, 220, 255, 0.18),
+    0 0 50px rgba(130, 255, 180, 0.14),
+    inset 0 1px 1px rgba(255, 255, 255, 0.35);
 }
 
 .taskCard:hover .cardBackground {
@@ -205,16 +233,14 @@
   transform: translateY(-2px);
 }
 
-/* ================== BACKGROUND & EFFECTS ================== */
+/* -------------------- BACKGROUND & EFFECTS -------------------- */
 
 .cardBackground {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    var(--task-color),
-    transparent 60%
-  );
+  background: linear-gradient(135deg,
+      var(--task-color),
+      transparent 60%);
   opacity: 0;
   transition: opacity var(--transition-slow) var(--easing-ease-in-out);
   border-radius: var(--radius-lg);
@@ -224,11 +250,9 @@
 .glowEffect {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    ellipse at center,
-    var(--task-color),
-    transparent 70%
-  );
+  background: radial-gradient(ellipse at center,
+      var(--task-color),
+      transparent 70%);
   opacity: 0;
   transition: opacity var(--transition-base) var(--easing-ease-out);
   filter: blur(20px);
@@ -236,7 +260,7 @@
   pointer-events: none;
 }
 
-/* ================== CARD CONTENT ================== */
+/* -------------------- CARD CONTENT -------------------- */
 
 .cardContent {
   position: relative;
@@ -256,24 +280,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    135deg,
-    var(--color-bg-secondary),
-    var(--color-bg-tertiary)
-  );
+  background: linear-gradient(135deg,
+      var(--color-bg-secondary),
+      var(--color-bg-tertiary));
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
+  backdrop-filter: blur(12px);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.25),
+    0 8px 18px rgba(0, 0, 0, 0.08);
   transition: all var(--transition-base) var(--easing-ease-out);
 }
 
 .taskCard:hover .iconContainer {
-  background: linear-gradient(
-    135deg,
-    var(--task-color),
-    var(--task-color)
-  );
+  background: linear-gradient(135deg,
+      var(--task-color),
+      var(--task-color));
   background-color: var(--task-color);
-  box-shadow: 0 8px 16px rgba(45, 95, 79, 0.2);
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 24px rgba(120, 220, 255, 0.18),
+    inset 0 1px 1px rgba(255, 255, 255, 0.25);
   border-color: var(--task-color);
 }
 
@@ -294,12 +321,10 @@
 .shine {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    45deg,
-    transparent 30%,
-    rgba(255, 255, 255, 0.1) 50%,
-    transparent 70%
-  );
+  background: linear-gradient(45deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 70%);
   border-radius: var(--radius-lg);
   pointer-events: none;
   opacity: 0;
@@ -311,7 +336,7 @@
   animation: shimmerEffect 600ms ease-out;
 }
 
-/* ================== TEXT CONTENT ================== */
+/* -------------------- TEXT CONTENT -------------------- */
 
 .textContent {
   flex: 1;
@@ -344,7 +369,7 @@
   color: var(--color-text-primary);
 }
 
-/* ================== SUBTASK HINT ================== */
+/* -------------------- SUBTASK HINT -------------------- */
 
 .subtaskHint {
   display: flex;
@@ -368,7 +393,7 @@
   color: var(--color-text-inverse);
 }
 
-/* ================== ARROW INDICATOR ================== */
+/* -------------------- ARROW INDICATOR -------------------- */
 
 .arrowIndicator {
   position: relative;
@@ -394,7 +419,7 @@
   stroke-width: 2.5;
 }
 
-/* ================== RESPONSIVE DESIGN ================== */
+/* -------------------- RESPONSIVE DESIGN -------------------- */
 
 @media (max-width: 48rem) {
   .taskCard {
@@ -444,15 +469,17 @@
   }
 }
 
-/* ================== ANIMATIONS ================== */
+/* -------------------- ANIMATIONS -------------------- */
 
 @keyframes bounceIcon {
   0% {
     transform: scale(1) translateY(0);
   }
+
   50% {
     transform: scale(1.1) translateY(-4px);
   }
+
   100% {
     transform: scale(1) translateY(0);
   }
@@ -463,16 +490,18 @@
     transform: translateX(-100%);
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     transform: translateX(100%);
     opacity: 0;
   }
 }
 
-/* ================== DARK MODE ADJUSTMENTS ================== */
+/* -------------------- DARK MODE ADJUSTMENTS -------------------- */
 
 @media (prefers-color-scheme: dark) {
   .taskCard:hover {
@@ -485,20 +514,16 @@
   }
 
   .shine {
-    background: linear-gradient(
-      45deg,
-      transparent 30%,
-      rgba(255, 255, 255, 0.15) 50%,
-      transparent 70%
-    );
+    background: linear-gradient(45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.15) 50%,
+        transparent 70%);
   }
 
   .iconContainer {
-    background: linear-gradient(
-      135deg,
-      var(--color-bg-secondary),
-      var(--color-bg-tertiary)
-    );
+    background: linear-gradient(135deg,
+        var(--color-bg-secondary),
+        var(--color-bg-tertiary));
     border-color: var(--color-border);
   }
 
@@ -507,9 +532,10 @@
   }
 }
 
-/* ================== ACCESSIBILITY - REDUCED MOTION ================== */
+/* -------------------- ACCESSIBILITY - REDUCED MOTION -------------------- */
 
 @media (prefers-reduced-motion: reduce) {
+
   .taskCard,
   .iconContainer,
   .glowEffect,
