@@ -1,3 +1,152 @@
+/* ================== TASK LIST CONTAINER ================== */
+
+.taskList {
+  width: 100%;
+  padding: var(--space-8) var(--space-4);
+  animation: fadeIn var(--duration-500) var(--easing-ease-out);
+}
+
+/* ================== TASK GRID ================== */
+
+.taskGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  max-width: 1000px;
+  margin: 0 auto;
+  animation: fadeIn var(--duration-700) var(--easing-ease-out);
+}
+
+/* ================== GRID ITEMS WITH STAGGER ================== */
+
+.taskGridItem {
+  animation: slideInUp calc(var(--duration-500) + (var(--item-index) * 50ms))
+    var(--easing-ease-out) backwards;
+  animation-fill-mode: both;
+}
+
+/* ================== LOADING STATE ================== */
+
+.loadingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  width: 100%;
+  padding: var(--space-8) var(--space-4);
+}
+
+.loadingSpinner {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinnerInner {
+  width: 100%;
+  height: 100%;
+  border: 3px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  border-radius: var(--radius-full);
+  animation: spin 1s linear infinite;
+}
+
+/* ================== RESPONSIVE DESIGN ================== */
+
+/* Medium screens - 2 columns */
+@media (min-width: 768px) {
+  .taskGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+}
+
+/* Large screens - 3 columns (but single column for better card view) */
+/* We keep it at 1-2 cols for better readability of task cards */
+@media (min-width: 1024px) {
+  .taskGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+
+  .taskList {
+    padding: var(--space-12) var(--space-8);
+  }
+}
+
+/* Extra large screens */
+@media (min-width: 1280px) {
+  .taskGrid {
+    grid-template-columns: 1fr;
+    max-width: 800px;
+  }
+
+  .taskList {
+    padding: var(--space-12);
+  }
+}
+
+/* ================== TABLET ADJUSTMENTS ================== */
+
+@media (max-width: 768px) {
+  .taskList {
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .taskGrid {
+    gap: var(--space-3);
+  }
+}
+
+/* ================== MOBILE ADJUSTMENTS ================== */
+
+@media (max-width: 480px) {
+  .taskList {
+    padding: var(--space-4) var(--space-3);
+  }
+
+  .taskGrid {
+    gap: var(--space-2);
+  }
+
+  .taskGridItem {
+    animation: slideInUp calc(var(--duration-500) + (var(--item-index) * 30ms))
+      var(--easing-ease-out) backwards;
+  }
+}
+
+/* ================== DARK MODE ================== */
+
+@media (prefers-color-scheme: dark) {
+  .loadingSpinner {
+    filter: opacity(0.8);
+  }
+}
+
+/* ================== ACCESSIBILITY - REDUCED MOTION ================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .taskList {
+    animation: none;
+  }
+
+  .taskGrid {
+    animation: none;
+  }
+
+  .taskGridItem {
+    animation: none;
+    opacity: 1;
+  }
+
+  .spinnerInner {
+    animation: none;
+  }
+}
+
 /* ================== TASK CARD COMPONENT ================== */
 
 .taskCard {
