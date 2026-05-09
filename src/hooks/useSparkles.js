@@ -37,25 +37,25 @@ const createSparkle = (id) => {
 };
 
 const useSparkles = (count = 18) => {
-  const [sparkles, setSparkles] = useState([]);
+  const [sparkles, setSparkles] = useState(() => {
+    // ✅ Function passed to useState runs ONCE on mount, before render
+    return Array.from({ length: count }, (_, i) => createSparkle(i));
+  });
 
   useEffect(() => {
-    // Creates the initial batch of sparkles
-    const initial = Array.from({ length: count }, (_, i) => createSparkle(i));
-    setSparkles(initial);
+    // Now sparkles are already initialized
+    // useEffect just handles the interval updates
 
-    // Every 2.5s, replace one random sparkle to keep it fresh
     const interval = setInterval(() => {
       setSparkles((prev) => {
         const idx = Math.floor(Math.random() * count);
         const updated = [...prev];
-        updated[idx] = createSparkle(Date.now()); // new unique id
+        updated[idx] = createSparkle(Date.now());
         return updated;
       });
     }, 2500);
-
-    return () => clearInterval(interval); // ← CLEANUP — very important!
-  }, []); // ← empty array = run once on mount
+    return () => clearInterval(interval);
+  }, [count]);
 
   return sparkles;
 };
