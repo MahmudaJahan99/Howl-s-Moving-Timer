@@ -1,0 +1,272 @@
+{
+  "tasks": [
+    {
+      "id": "boiling-eggs",
+      "name": "Boiling Eggs",
+      "icon": "🥚",
+      "color": "secondary",
+      "description": "Perfect eggs every time",
+      "emoji": "🥚",
+      "subtasks": [
+        {
+          "id": "soft-boil",
+          "name": "Soft Boil",
+          "duration": 4,
+          "description": "Runny yolk"
+        },
+        {
+          "id": "medium-boil",
+          "name": "Medium Boil",
+          "duration": 6,
+          "description": "Jammy center"
+        },
+        {
+          "id": "hard-boil",
+          "name": "Hard Boil",
+          "duration": 8,
+          "description": "Fully cooked"
+        }
+      ]
+    },
+    {
+      "id": "heating-milk",
+      "name": "Heating Milk",
+      "icon": "🥛",
+      "color": "accent-blush",
+      "description": "Warm milk for breakfast",
+      "emoji": "🥛",
+      "subtasks": [
+        {
+          "id": "lukewarm",
+          "name": "Lukewarm",
+          "duration": 2,
+          "description": "Body temperature"
+        },
+        {
+          "id": "warm",
+          "name": "Warm",
+          "duration": 3,
+          "description": "Hot to touch"
+        },
+        {
+          "id": "hot",
+          "name": "Hot",
+          "duration": 4,
+          "description": "Steaming hot"
+        }
+      ]
+    },
+    {
+      "id": "cooking-rice",
+      "name": "Cooking Rice",
+      "icon": "🍚",
+      "color": "primary",
+      "description": "Fluffy, fragrant rice",
+      "emoji": "🍚",
+      "subtasks": [
+        {
+          "id": "white-rice",
+          "name": "White Rice",
+          "duration": 18,
+          "description": "Classic white"
+        },
+        {
+          "id": "brown-rice",
+          "name": "Brown Rice",
+          "duration": 35,
+          "description": "Nutty brown"
+        },
+        {
+          "id": "basmati",
+          "name": "Basmati",
+          "duration": 12,
+          "description": "Aromatic basmati"
+        }
+      ]
+    },
+    {
+      "id": "water-motor",
+      "name": "Water Motor",
+      "icon": "💧",
+      "color": "accent-blue",
+      "description": "Fill water tanks",
+      "emoji": "💧",
+      "subtasks": [
+        {
+          "id": "pump-10l",
+          "name": "Pump 10L",
+          "duration": 3,
+          "description": "Quick fill"
+        },
+        {
+          "id": "pump-20l",
+          "name": "Pump 20L",
+          "duration": 6,
+          "description": "Standard fill"
+        },
+        {
+          "id": "pump-50l",
+          "name": "Pump 50L",
+          "duration": 15,
+          "description": "Full tank"
+        }
+      ]
+    },
+    {
+      "id": "brewing-tea",
+      "name": "Brewing Tea",
+      "icon": "🍵",
+      "color": "primary",
+      "description": "Sip your perfect cup",
+      "emoji": "🍵",
+      "subtasks": [
+        {
+          "id": "green-tea",
+          "name": "Green Tea",
+          "duration": 3,
+          "description": "Delicate & fresh"
+        },
+        {
+          "id": "black-tea",
+          "name": "Black Tea",
+          "duration": 5,
+          "description": "Rich & robust"
+        },
+        {
+          "id": "herbal-tea",
+          "name": "Herbal Tea",
+          "duration": 7,
+          "description": "Soothing brew"
+        }
+      ]
+    },
+    {
+      "id": "steaming-vegetables",
+      "name": "Steaming Vegetables",
+      "icon": "🥦",
+      "color": "primary",
+      "description": "Fresh and crisp veggies",
+      "emoji": "🥦",
+      "subtasks": [
+        {
+          "id": "broccoli",
+          "name": "Broccoli",
+          "duration": 4,
+          "description": "Bright green"
+        },
+        {
+          "id": "carrots",
+          "name": "Carrots",
+          "duration": 6,
+          "description": "Tender carrots"
+        },
+        {
+          "id": "mixed",
+          "name": "Mixed Vegetables",
+          "duration": 8,
+          "description": "Veggie medley"
+        }
+      ]
+    },
+    {
+      "id": "pasta-cooking",
+      "name": "Cooking Pasta",
+      "icon": "🍝",
+      "color": "secondary",
+      "description": "Al dente or soft",
+      "emoji": "🍝",
+      "subtasks": [
+        {
+          "id": "al-dente",
+          "name": "Al Dente",
+          "duration": 8,
+          "description": "Firm & chewy"
+        },
+        {
+          "id": "soft",
+          "name": "Soft",
+          "duration": 10,
+          "description": "Tender & soft"
+        }
+      ]
+    },
+    {
+      "id": "laundry-wash",
+      "name": "Laundry Washing",
+      "icon": "🧺",
+      "color": "accent-blue",
+      "description": "Clean clothes cycle",
+      "emoji": "🧺",
+      "subtasks": [
+        {
+          "id": "quick-wash",
+          "name": "Quick Wash",
+          "duration": 15,
+          "description": "Speed mode"
+        },
+        {
+          "id": "normal-wash",
+          "name": "Normal Wash",
+          "duration": 30,
+          "description": "Standard cycle"
+        },
+        {
+          "id": "delicate",
+          "name": "Delicate Cycle",
+          "duration": 45,
+          "description": "Gentle care"
+        }
+      ]
+    },
+    {
+      "id": "meditation",
+      "name": "Meditation & Break",
+      "icon": "🧘",
+      "color": "accent-purple",
+      "description": "Mindful moments",
+      "emoji": "🧘",
+      "subtasks": [
+        {
+          "id": "short-break",
+          "name": "Short Break",
+          "duration": 5,
+          "description": "Quick rest"
+        },
+        {
+          "id": "medium-break",
+          "name": "Medium Break",
+          "duration": 10,
+          "description": "Refresh yourself"
+        },
+        {
+          "id": "long-break",
+          "name": "Long Break",
+          "duration": 15,
+          "description": "Extended rest"
+        }
+      ]
+    },
+    {
+      "id": "dishwashing",
+      "name": "Dishwashing",
+      "icon": "🍽️",
+      "color": "secondary",
+      "description": "Sparkling clean dishes",
+      "emoji": "🍽️",
+      "subtasks": [
+        {
+          "id": "quick-wash",
+          "name": "Quick Wash",
+          "duration": 10,
+          "description": "Fast clean"
+        },
+        {
+          "id": "deep-clean",
+          "name": "Deep Clean",
+          "duration": 20,
+          "description": "Thorough wash"
+        }
+      ]
+    }
+  ]
+}
