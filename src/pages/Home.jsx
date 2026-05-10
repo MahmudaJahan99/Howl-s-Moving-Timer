@@ -36,11 +36,11 @@ const Home = () => {
 
             {/* Content layer */}
             <div className="relative z-10 text-center px-6">
-                <h1 className="font-[Yomogi] text-5xl text-[#3D2B1F] mb-3">
+                <h1>
                     Howl's Moving Timer
                 </h1>
-                <h2 className="font-[Nunito] text-lg text-[#4A6741] font-normal">
-                    Like Calcifer, always burning — never stopping
+                <h2>
+                    Always Burning — Never Stopping
                 </h2>
             </div>
 

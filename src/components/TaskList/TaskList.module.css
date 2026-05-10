@@ -133,7 +133,7 @@
     inset 0 1px 1px rgba(255, 255, 255, 0.25),
     inset 0 -1px 1px rgba(255, 255, 255, 0.06);
   transition:
-  transform var(--transition-base) cubic-bezier(.2, .8, .2, 1),
+  transform var(--transition-base) var(--easing-ease-out),
   box-shadow var(--transition-base) var(--easing-ease-out),
   border-color var(--transition-base) var(--easing-ease-out),
   background var(--transition-base) var(--easing-ease-out);
@@ -157,7 +157,7 @@
       rgba(255, 255, 255, 0.22),
       transparent);
   transform: rotate(25deg);
-  transition: transform 900ms ease;
+  transition: transform var(--transition-slower) var(--easing-ease-out);
   z-index: 1;
   pointer-events: none;
 }
