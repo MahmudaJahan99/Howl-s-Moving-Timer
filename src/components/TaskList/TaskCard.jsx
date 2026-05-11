@@ -99,8 +99,6 @@ const TaskCard = ({ task, index }) => {
             className={styles.ctaButton}
             style={{
               "--task-color": task.themeColor,
-              "--gradient-start": task.gradientStart,
-              "--gradient-end": task.gradientEnd,
             }}
           >
             Select {task.name.split(" ")[0].toLowerCase()} time →

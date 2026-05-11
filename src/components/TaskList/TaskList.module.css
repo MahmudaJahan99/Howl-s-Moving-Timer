@@ -8,9 +8,15 @@
 .taskGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-4);
+  gap: var(--space-10);
   max-width: 1200px;
   margin: 0 auto;
+  align-items: stretch;
+  grid-auto-rows: 1fr;
+}
+
+.taskGridItem {
+  height: 100%;
 }
 
 /* -------------------- LOADING STATE -------------------- */
@@ -42,40 +48,32 @@
 }
 
 /* -------------------- RESPONSIVE DESIGN -------------------- */
+/* Tablets */
 @media (min-width: 768px) {
-  .taskGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-6);
-  }
-}
-
-
-/* -------------------- TABLET ADJUSTMENTS -------------------- */
-
-@media (max-width: 768px) {
   .taskList {
     padding: var(--space-6) var(--space-4);
   }
 
   .taskGrid {
-    gap: var(--space-3);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* -------------------- MOBILE ADJUSTMENTS -------------------- */
+/* Laptops */
+@media (min-width: 1024px) {
+  .taskGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
+/* Mobile adjustments */
 @media (max-width: 480px) {
   .taskList {
     padding: var(--space-4) var(--space-3);
   }
-
-  .taskGrid {
-    gap: var(--space-2);
-  }
 }
 
 /* -------------------- DARK MODE -------------------- */
-
 @media (prefers-color-scheme: dark) {
   .loadingSpinner {
     filter: opacity(0.8);
@@ -104,8 +102,10 @@
 
 /* -------------------- TASK CARD COMPONENT -------------------- */
 .taskCard {
+  height: 100%;
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -181,6 +181,12 @@
   pointer-events: none;
 }
 
+.ctaButton {
+  margin-top: auto;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: transparent;
+}
+
 /* -------------------- HOVER & FOCUS STATES -------------------- */
 .taskCard:hover::before {
   transform:
@@ -252,6 +258,20 @@
   filter: blur(20px);
   border-radius: var(--radius-lg);
   pointer-events: none;
+}
+
+.cardGlow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.taskCard:hover .cardGlow {
+  opacity: 1;
 }
 
 /* -------------------- CARD CONTENT -------------------- */
@@ -328,11 +348,12 @@
 }
 
 /* -------------------- TEXT CONTENT -------------------- */
-
 .textContent {
   flex: 1;
   text-align: left;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .taskName {
@@ -408,20 +429,6 @@
   width: 100%;
   height: 100%;
   stroke-width: 2.5;
-}
-
-/* -------------------- RESPONSIVE DESIGN -------------------- */
-
-@media (max-width: 48rem) {
-  .taskCard {
-    padding: 1.25rem;
-  }
-}
-
-@media (max-width: 24rem) {
-  .taskCard {
-    padding: 1rem;
-  }
 }
 
 /* -------------------- ANIMATIONS -------------------- */

@@ -133,7 +133,6 @@ button {
     cursor: pointer;
     padding: 10px 20px;
     border-radius: var(--radius-sm);
-    border: none;
     transition: all var(--transition-base) var(--easing-ease-out);
 }
 
@@ -555,6 +554,12 @@ pre code {
     body {
         font-size: var(--font-size-sm);
     }
+}
+
+@media (min-width: 2560px) {
+    body {
+    zoom: 1.5;
+  }
 }
 
 /* -------------------- PRINT STYLES -------------------- */
