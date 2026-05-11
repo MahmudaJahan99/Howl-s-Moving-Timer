@@ -67,10 +67,7 @@ const TaskCard = ({ task, index }) => {
         <motion.div
           className={styles.iconContainer}
         >
-          <span
-            className={styles.icon}>
-            {task.emoji}
-          </span>
+          <img className={styles.icon} src={task.emoji} alt={task.name} />
         </motion.div>
 
         {/* Text content */}

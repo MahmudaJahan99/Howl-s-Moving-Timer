@@ -3,7 +3,7 @@
     {
       "id": "boiling-eggs",
       "name": "Boiling Eggs",
-      "emoji": "🥚",
+      "emoji": "../../public/assets/images/egg.png",
       "tagline": "Golden yolks, perfect vibes",
       "themeColor": "#F5A842",
       "gradientStart": "#FDD8B8",
@@ -44,7 +44,7 @@
     {
       "id": "heating-milk",
       "name": "Heating Milk",
-      "emoji": "🥛",
+      "emoji": "../../public/assets/images/milk.png",
       "tagline": "Creamy dreams in a mug",
       "themeColor": "#F5EDD7",
       "gradientStart": "#FEF5E9",
@@ -85,7 +85,7 @@
     {
       "id": "cooking-rice",
       "name": "Cooking Rice",
-      "emoji": "🍚",
+      "emoji": "../../public/assets/images/rice.png",
       "tagline": "Fluffy grains of patience",
       "themeColor": "#E8DCC4",
       "gradientStart": "#F5F0E8",
@@ -208,7 +208,7 @@
     {
       "id": "steaming-vegetables",
       "name": "Steaming Vegetables",
-      "emoji": "🥦",
+      "emoji": "../../public/assets/images/vegetables.png",
       "tagline": "Green goodness, crispy texture",
       "themeColor": "#5DB860",
       "gradientStart": "#D8E8CF",
@@ -249,7 +249,7 @@
     {
       "id": "pasta-cooking",
       "name": "Cooking Pasta",
-      "emoji": "🍝",
+      "emoji": "../../public/assets/images/pasta.png",
       "tagline": "Twirl, taste, and twirling",
       "themeColor": "#D4A574",
       "gradientStart": "#F0E4D3",
@@ -284,7 +284,7 @@
     {
       "id": "laundry-wash",
       "name": "Laundry Washing",
-      "emoji": "🧺",
+      "emoji": "../../public/assets/images/laundry.png",
       "tagline": "Clean clothes, fresh start",
       "themeColor": "#6BA3D4",
       "gradientStart": "#D9E8F5",
@@ -325,7 +325,7 @@
     {
       "id": "meditation",
       "name": "Meditation & Break",
-      "emoji": "🧘",
+      "emoji": "../../public/assets/images/meditation.png",
       "tagline": "Breathe, reset, and renew",
       "themeColor": "#8B7BA8",
       "gradientStart": "#E5D8F0",
@@ -366,7 +366,7 @@
     {
       "id": "dishwashing",
       "name": "Dishwashing",
-      "emoji": "🍽️",
+      "emoji": "../../public/assets/images/dishes.png",
       "tagline": "Sparkle, shine, and serenity",
       "themeColor": "#C99F7F",
       "gradientStart": "#F0E4D9",
