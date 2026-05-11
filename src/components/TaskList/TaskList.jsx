@@ -35,20 +35,20 @@ const TaskList = () => {
 
     return (
         <section className={styles.taskList} aria-label="Available kitchen tasks">
-      <div className={styles.taskGrid}>
-        {tasks.map((task, index) => (
-          <div
-            key={task.id}
-            className={styles.taskGridItem}
-            style={{
-              '--item-index': index,
-            }}
-          >
-            <TaskCard task={task}index={index} />
-          </div>
-        ))}
-      </div>
-    </section>
+            <div className={styles.taskGrid}>
+                {tasks.map((task, index) => (
+                    <div
+                        key={task.id}
+                        className={styles.taskGridItem}
+                        style={{
+                            '--item-index': index,
+                        }}
+                    >
+                        <TaskCard task={task} index={index} />
+                    </div>
+                ))}
+            </div>
+        </section>
     );
 };
 
