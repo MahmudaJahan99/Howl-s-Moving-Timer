@@ -74,25 +74,6 @@ h2 {
     font-size: var(--font-size-xl);
 }
 
-/* h3 {
-    font-size: var(--font-size-3xl);
-}
-
-h4 {
-    font-size: var(--font-size-2xl);
-}
-
-h5 {
-    font-size: var(--font-size-xl);
-}
-
-h6 {
-    font-size: var(--font-size-lg);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    opacity: 0.85;
-} */
-
 p {
     margin-bottom: var(--space-4);
     color: var(--color-text-secondary);
