@@ -3,10 +3,23 @@
     {
       "id": "boiling-eggs",
       "name": "Boiling Eggs",
-      "icon": "🥚",
-      "color": "secondary",
-      "description": "Perfect eggs every time",
       "emoji": "🥚",
+      "tagline": "Golden yolks, perfect vibes",
+      "themeColor": "#F5A842",
+      "gradientStart": "#FDD8B8",
+      "gradientEnd": "#F5C291",
+      "facts": [
+        "Older eggs peel easier because the membrane separates from the shell as it ages over time.",
+        "A perfectly boiled egg has layers: whites set at 60°C and yolk at 65°C—timing is everything!",
+        "The sulfur smell in overcooked eggs happens when hydrogen sulfide forms—don't overcook!",
+        "Adding salt to boiling water raises the boiling point, helping eggs cook faster.",
+        "An egg's shell is porous and contains about 17,000 tiny pores that allow gases to escape.",
+        "The chicken's diet affects egg yolk color—marigolds and algae make them more golden.",
+        "Eggs cooled immediately after boiling stop cooking and peel more easily.",
+        "A fresh egg sinks in water while an old egg floats due to the air cell inside.",
+        "Room-temperature eggs crack less when boiling than cold eggs from the fridge.",
+        "Eggshells are made of calcium carbonate, the same stuff as chalk and limestone."
+      ],
       "subtasks": [
         {
           "id": "soft-boil",
@@ -31,10 +44,23 @@
     {
       "id": "heating-milk",
       "name": "Heating Milk",
-      "icon": "🥛",
-      "color": "accent-blush",
-      "description": "Warm milk for breakfast",
       "emoji": "🥛",
+      "tagline": "Creamy dreams in a mug",
+      "themeColor": "#F5EDD7",
+      "gradientStart": "#FEF5E9",
+      "gradientEnd": "#F5E9DB",
+      "facts": [
+        "Heating milk to 65°C denatures proteins and creates a thicker skin on top, loved in many recipes.",
+        "Milk scorches at 71°C—just below boiling—so watch carefully to avoid burnt edges.",
+        "The lactose in milk becomes sweeter when heated, making warm milk taste naturally sweeter.",
+        "Cow's milk is about 88% water and 3.5% protein—the exact composition of comfort.",
+        "Milk proteins called casein curdle when heated with acidic ingredients like lemon juice.",
+        "Whole milk creates a richer foam for lattes because fat content stabilizes bubbles.",
+        "Ancient civilizations boiled milk to preserve it, discovering pasteurization centuries early.",
+        "Milk has a natural enzyme called lipase that breaks down fat and creates 'tangy' flavors.",
+        "Adding milk to hot tea prevents tannins from staining your teeth.",
+        "Plant-based milks require less heat to warm but don't develop the same creamy texture."
+      ],
       "subtasks": [
         {
           "id": "lukewarm",
@@ -59,10 +85,23 @@
     {
       "id": "cooking-rice",
       "name": "Cooking Rice",
-      "icon": "🍚",
-      "color": "primary",
-      "description": "Fluffy, fragrant rice",
       "emoji": "🍚",
+      "tagline": "Fluffy grains of patience",
+      "themeColor": "#E8DCC4",
+      "gradientStart": "#F5F0E8",
+      "gradientEnd": "#EDE4D5",
+      "facts": [
+        "The absorption method works because each grain absorbs exactly the right amount of water.",
+        "White rice is 'polished' while brown rice keeps the bran—making brown take longer to cook.",
+        "Rice cookers work by detecting steam changes when all water is absorbed—pure engineering!",
+        "Rinsing rice removes excess starch that makes it gluey, creating fluffier grains.",
+        "Basmati rice has an interlocking protein structure that makes it stay separate when cooked.",
+        "Rice is the staple food for over 3.5 billion people—more than any other grain.",
+        "Arborio rice has high starch content, perfect for risotto because it releases creamy texture.",
+        "Aging rice for 2+ years makes it fluffier because moisture slowly evaporates from grains.",
+        "Covering rice while cooking traps steam and ensures even heat distribution.",
+        "Left-over rice must be cooled quickly and refrigerated to prevent bacterial growth."
+      ],
       "subtasks": [
         {
           "id": "white-rice",
@@ -87,10 +126,23 @@
     {
       "id": "water-motor",
       "name": "Water Motor",
-      "icon": "💧",
-      "color": "accent-blue",
-      "description": "Fill water tanks",
       "emoji": "💧",
+      "tagline": "Flow, fill, and flourish",
+      "themeColor": "#5BA3C7",
+      "gradientStart": "#D5E8F5",
+      "gradientEnd": "#B8D8F0",
+      "facts": [
+        "Water is the only substance that exists naturally in all three states on Earth.",
+        "A liter of water weighs exactly 1 kilogram—so 20L equals 20kg of weight!",
+        "Water molecules form hydrogen bonds, which is why water can climb up plant roots.",
+        "Stored water can develop bacteria if not covered—keep tanks sealed for safety.",
+        "Room-temperature water (20-25°C) is optimal for most household uses and plants.",
+        "Pumps work by creating pressure differences that move water against gravity.",
+        "Soft water (low minerals) flows easier through pipes than hard water (high minerals).",
+        "Ancient Romans built aqueducts using gravity and mathematics—no pumps needed!",
+        "A dripping faucet wastes 3,000 gallons per year—fix leaks immediately.",
+        "Boiling water for 20 minutes kills most bacteria, making it safe to drink."
+      ],
       "subtasks": [
         {
           "id": "pump-10l",
@@ -115,10 +167,23 @@
     {
       "id": "brewing-tea",
       "name": "Brewing Tea",
-      "icon": "🍵",
-      "color": "primary",
-      "description": "Sip your perfect cup",
       "emoji": "🍵",
+      "tagline": "Steep, sip, and serenity",
+      "themeColor": "#8B7355",
+      "gradientStart": "#E8DDD0",
+      "gradientEnd": "#DFD0BF",
+      "facts": [
+        "Green tea steeps best at 70-80°C; boiling water destroys delicate flavors and antioxidants.",
+        "Black tea oxidation gives it color—it's processed differently but from the same plant as green!",
+        "Herbal infusions aren't technically 'tea' unless they contain leaves from Camellia sinensis plant.",
+        "Tea's caffeine content depends on steep time—5 minutes gives more caffeine than 1 minute.",
+        "The tannic acid in tea reduces iron absorption, so avoid tea with iron-rich meals.",
+        "Quality tea leaves unfurl beautifully when steeped, releasing maximum flavor and aroma.",
+        "Tea originated in China 5,000 years ago when leaves accidentally blew into a pot of water!",
+        "Oversteeping tea makes it bitter because tannins extract too much from the leaves.",
+        "Loose leaf tea has more surface area than tea bags, brewing faster and tasting fresher.",
+        "Adding milk to tea prevents tannins from staining teeth and smooths bitter flavors."
+      ],
       "subtasks": [
         {
           "id": "green-tea",
@@ -143,10 +208,23 @@
     {
       "id": "steaming-vegetables",
       "name": "Steaming Vegetables",
-      "icon": "🥦",
-      "color": "primary",
-      "description": "Fresh and crisp veggies",
       "emoji": "🥦",
+      "tagline": "Green goodness, crispy texture",
+      "themeColor": "#5DB860",
+      "gradientStart": "#D8E8CF",
+      "gradientEnd": "#C5DEB8",
+      "facts": [
+        "Steaming preserves more vitamins than boiling because vegetables don't leach into water.",
+        "Broccoli's sulforaphane (anti-cancer compound) is strongest when lightly steamed, not raw.",
+        "Carrots become sweeter when steamed because heat breaks down cell walls, releasing sugars.",
+        "Steam temperature is lower than boiling water (95-100°C vs 100°C), protecting delicate vitamins.",
+        "Frozen vegetables steam perfectly fine and sometimes retain more nutrients than fresh.",
+        "Steaming time varies: broccoli needs 4 minutes, carrots need 8 minutes—don't mix!",
+        "Over-steaming vegetables creates a sulfurous smell from hydrogen sulfide gas release.",
+        "Steamed vegetables maintain bright color because chlorophyll isn't destroyed by acid.",
+        "Adding a pinch of salt to steam water seasons vegetables from within as they cook.",
+        "Vegetables can be steamed ahead and reheated without losing texture or nutrients."
+      ],
       "subtasks": [
         {
           "id": "broccoli",
@@ -171,10 +249,23 @@
     {
       "id": "pasta-cooking",
       "name": "Cooking Pasta",
-      "icon": "🍝",
-      "color": "secondary",
-      "description": "Al dente or soft",
       "emoji": "🍝",
+      "tagline": "Twirl, taste, and twirling",
+      "themeColor": "#D4A574",
+      "gradientStart": "#F0E4D3",
+      "gradientEnd": "#E6D7C3",
+      "facts": [
+        "Al dente (firm bite) originated in Italy and preserves better digestion than mushy pasta.",
+        "Pasta water's starch helps sauce stick to noodles—don't drain it all away!",
+        "Adding salt to pasta water is essential; it flavors the pasta, not just the water.",
+        "Freshly boiled pasta cools quickly when sauced but cooked pasta stays warm longer.",
+        "Dried pasta (durum wheat) is different from fresh pasta (soft wheat)—cook times vary greatly.",
+        "Pasta triples in weight when cooked because it absorbs water through its porous structure.",
+        "Stirring pasta in the first minute prevents sticking; after that, it won't stick together.",
+        "Whole wheat pasta takes 2-3 minutes longer than refined pasta due to higher fiber density.",
+        "Gluten network development makes pasta chewy—it's not just about cooking time.",
+        "Shocking pasta in ice water stops cooking immediately, perfect for cold salads."
+      ],
       "subtasks": [
         {
           "id": "al-dente",
@@ -193,10 +284,23 @@
     {
       "id": "laundry-wash",
       "name": "Laundry Washing",
-      "icon": "🧺",
-      "color": "accent-blue",
-      "description": "Clean clothes cycle",
       "emoji": "🧺",
+      "tagline": "Clean clothes, fresh start",
+      "themeColor": "#6BA3D4",
+      "gradientStart": "#D9E8F5",
+      "gradientEnd": "#C3DDF0",
+      "facts": [
+        "Hot water opens fabric fibers, allowing detergent to penetrate deeper and clean better.",
+        "Delicate cycles use less agitation, protecting elastic and intricate stitching from damage.",
+        "Washing clothes in cold water saves 90% of energy while still getting them clean.",
+        "Detergent molecules have a water-loving and oil-loving end, trapping dirt particles.",
+        "Overloading a washing machine prevents proper water circulation and incomplete cleaning.",
+        "Modern detergents work in cold water; older ones needed heat to activate fully.",
+        "Fabric softeners coat fibers with wax, reducing absorbency and damaging athletic wear.",
+        "Leaving wet clothes in the washer creates mildew and musty smells within 24 hours.",
+        "Different fabrics need different cycles: denim survives heavy cycle, silk needs gentle.",
+        "Sorting by color prevents dye transfer; new dark items bleed color in first few washes."
+      ],
       "subtasks": [
         {
           "id": "quick-wash",
@@ -221,10 +325,23 @@
     {
       "id": "meditation",
       "name": "Meditation & Break",
-      "icon": "🧘",
-      "color": "accent-purple",
-      "description": "Mindful moments",
       "emoji": "🧘",
+      "tagline": "Breathe, reset, and renew",
+      "themeColor": "#8B7BA8",
+      "gradientStart": "#E5D8F0",
+      "gradientEnd": "#D9CCEB",
+      "facts": [
+        "Just 5 minutes of meditation lowers cortisol (stress hormone) and calms the nervous system.",
+        "Deep breathing activates the parasympathetic nervous system, the body's 'rest mode'.",
+        "Regular meditation increases gray matter in the brain region responsible for attention.",
+        "A 10-minute break boosts productivity more than working through fatigue without stopping.",
+        "Meditation dates back 5,000 years to ancient India and was refined by Buddhist monks.",
+        "The 'runner's high' and meditative state both trigger endorphin release in the brain.",
+        "Mindfulness meditation reduces blood pressure, heart rate, and muscle tension measurably.",
+        "Taking breaks prevents decision fatigue—your brain needs rest to make good choices.",
+        "Even 15-minute meditation sessions improve sleep quality and reduce insomnia symptoms.",
+        "Meditation rewires the amygdala (fear center), making anxiety less intense over time."
+      ],
       "subtasks": [
         {
           "id": "short-break",
@@ -249,10 +366,23 @@
     {
       "id": "dishwashing",
       "name": "Dishwashing",
-      "icon": "🍽️",
-      "color": "secondary",
-      "description": "Sparkling clean dishes",
       "emoji": "🍽️",
+      "tagline": "Sparkle, shine, and serenity",
+      "themeColor": "#C99F7F",
+      "gradientStart": "#F0E4D9",
+      "gradientEnd": "#E8D9CC",
+      "facts": [
+        "Hot water breaks down grease better than cold because heat increases molecular movement.",
+        "Dish soap is an amphiphilic molecule—it has both water-loving and grease-loving ends.",
+        "Pre-soaking dishes loosens dried food, reducing scrubbing time and water consumption.",
+        "Hard water (minerals like calcium) leaves spots on dishes even after drying completely.",
+        "Drying dishes immediately prevents water spots and bacteria growth from sitting wet.",
+        "Vinegar's acidity cuts through grease and mineral deposits better than soap alone.",
+        "Scrubbing patterns (circular vs back-and-forth) don't matter—consistent pressure does.",
+        "Hot soapy water kills bacteria faster than cold water, making dishes safer.",
+        "Air-drying dishes in a rack is more hygienic than towel-drying which spreads bacteria.",
+        "Letting dishes air-dry on racks reduces energy use compared to dishwasher heating cycles."
+      ],
       "subtasks": [
         {
           "id": "quick-wash",

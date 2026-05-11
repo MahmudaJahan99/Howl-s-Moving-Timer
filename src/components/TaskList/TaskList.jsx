@@ -44,7 +44,7 @@ const TaskList = () => {
               '--item-index': index,
             }}
           >
-            <TaskCard task={task} />
+            <TaskCard task={task}index={index} />
           </div>
         ))}
       </div>
