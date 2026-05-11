@@ -131,9 +131,9 @@ button {
     font-size: inherit;
     line-height: inherit;
     cursor: pointer;
+    padding: 10px 20px;
+    border-radius: var(--radius-sm);
     border: none;
-    background: none;
-    padding: 0;
     transition: all var(--transition-base) var(--easing-ease-out);
 }
 
@@ -143,9 +143,7 @@ button:disabled {
 }
 
 button:focus-visible {
-    outline: 2px solid var(--color-primary);
     outline-offset: 2px;
-    border-radius: var(--radius-sm);
 }
 
 /* -------------------- FORMS -------------------- */

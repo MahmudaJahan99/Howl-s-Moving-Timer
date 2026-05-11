@@ -191,16 +191,6 @@
   transform:
     translateY(-4px) scale(1.015);
   border-color: rgba(255, 255, 255, 0.35);
-
-  background:
-    linear-gradient(135deg,
-      rgba(255, 255, 255, 0.22),
-      rgba(255, 255, 255, 0.08)),
-    linear-gradient(135deg,
-      rgba(120, 220, 255, 0.25),
-      rgba(130, 255, 180, 0.20),
-      rgba(255, 255, 255, 0.10));
-
   box-shadow:
     0 22px 45px rgba(0, 0, 0, 0.18),
     0 0 30px rgba(120, 220, 255, 0.18),
@@ -233,6 +223,10 @@
   transform: translateY(-2px);
 }
 
+.taskCard:hover .ctaButton {
+  background: var(--task-color);
+}
+
 /* -------------------- BACKGROUND & EFFECTS -------------------- */
 
 .cardBackground {
@@ -250,7 +244,7 @@
 .glowEffect {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center,
+  background: radial-gradient(circle at top left,
       var(--task-color),
       transparent 70%);
   opacity: 0;
@@ -287,10 +281,14 @@
 }
 
 .taskCard:hover .iconContainer {
-  background: linear-gradient(135deg,
+  background:
+    linear-gradient(135deg,
+      rgba(255, 255, 255, 0.16),
+      rgba(255, 255, 255, 0.05)),
+    linear-gradient(135deg,
+      var(--gradient-start),
       var(--task-color),
-      var(--task-color));
-  background-color: var(--task-color);
+      var(--gradient-end));
   transform: translateY(-2px);
   box-shadow:
     0 12px 24px rgba(120, 220, 255, 0.18),

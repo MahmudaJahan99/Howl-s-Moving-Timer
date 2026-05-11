@@ -52,7 +52,10 @@ const TaskCard = ({ task, index }) => {
       onClick={handleClick}
       aria-label={`Select ${task.name} task`}
     >
-      <div className={styles.cardGlow} />
+      <div className={styles.cardGlow}
+        style={{
+          boxShadow: `0 0 40px 8px ${task.themeColor}33`,
+        }} />
 
       {/* Card Background with subtle gradient */}
       <div className={styles.cardBackground} />
@@ -66,6 +69,11 @@ const TaskCard = ({ task, index }) => {
         {/* Image */}
         <motion.div
           className={styles.iconContainer}
+          style={{
+            "--task-color": task.themeColor,
+            "--gradient-start": task.gradientStart,
+            "--gradient-end": task.gradientEnd,
+          }}
         >
           <img className={styles.icon} src={task.emoji} alt={task.name} />
         </motion.div>
@@ -88,7 +96,12 @@ const TaskCard = ({ task, index }) => {
           {/* Button */}
           <button
             onClick={handleClick}
-            className="w-full py-2 px-4 border border-gray-300 rounded text-sm font-medium hover:bg-gray-50 transition-colors"
+            className={styles.ctaButton}
+            style={{
+              "--task-color": task.themeColor,
+              "--gradient-start": task.gradientStart,
+              "--gradient-end": task.gradientEnd,
+            }}
           >
             Select {task.name.split(" ")[0].toLowerCase()} time →
           </button>
