@@ -47,7 +47,7 @@ const TaskCard = ({ task }) => {
   }
 
   return (
-    <motion.button
+    <motion.div
       variants={cardVariants}
       initial="rest"
       whileHover="hover"
@@ -85,25 +85,34 @@ const TaskCard = ({ task }) => {
           <span className={styles.icon}>
             {task.emoji}
           </span>
-
-          <div className={styles.shine} />
         </motion.div>
 
         {/* Text content */}
         <div className={styles.textContent}>
+          {/* Title */}
           <h3 className={styles.taskName}>
             {task.name}
           </h3>
-
+          {/* Tagline */}
           <p className={styles.taskDescription}>
-            {task.description}
+            {task.tagline}
+          </p>
+          {/* Interesting Fact */}
+          <p
+            className="text-xs leading-relaxed mb-6"
+            style={{ color: "var(--text-secondary)" }}
+          >
+            {task.fact}
           </p>
 
-          <div className={styles.subtaskHint}>
-            <span className={styles.subtaskCount}>
-              {task.subtasks.length} options
-            </span>
-          </div>
+          {/* Button */}
+          <button
+            onClick={handleClick}
+            className="w-full py-2 px-4 border border-gray-300 rounded text-sm font-medium transition-all hover:bg-gray-50"
+            style={{ color: "var(--text-primary)" }}
+          >
+            {task.buttonText} →
+          </button>
         </div>
       </div>
 
@@ -122,7 +131,7 @@ const TaskCard = ({ task }) => {
           <path d="M5 12h14M12 5l7 7-7 7" />
         </svg>
       </motion.div>
-    </motion.button>
+    </motion.div>
   )
 };
 
