@@ -1,0 +1,547 @@
+/* Timerdisplay.module · CSS */
+/* -------------------- TIMER DISPLAY CONTAINER -------------------- */
+.timerDisplayContainer {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* -------------------- PROGRESS RING SVG -------------------- */
+.progressRing {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.12));
+}
+
+.progressBg {
+    fill: none;
+    stroke: var(--color-border);
+    stroke-width: 8;
+    opacity: 0.3;
+}
+
+.progressFill {
+    fill: none;
+    stroke: var(--task-color);
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 879.6;
+    stroke-dashoffset: 879.6;
+    transition: stroke-dashoffset 0.3s ease-out, filter 0.3s ease-out;
+    opacity: 0.95;
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.1));
+}
+
+/* -------------------- TIME DISPLAY -------------------- */
+.timeDisplay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.timeContainer {
+    position: relative;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeValue {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.2em;
+    font-family: var(--font-mono);
+    font-weight: var(--font-weight-bold);
+    font-size: 5rem;
+    color: var(--color-text-primary);
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.minutes {
+    display: inline-block;
+}
+
+.separator {
+    margin: 0 0.1em;
+    opacity: 0.7;
+    animation: blink 1s ease-in-out infinite;
+}
+
+.seconds {
+    display: inline-block;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* -------------------- COMPLETED LABEL -------------------- */
+.completedLabel {
+    position: absolute;
+    bottom: 20px;
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-success);
+    text-align: center;
+}
+
+/* -------------------- STATUS INDICATOR -------------------- */
+.statusIndicator {
+    position: absolute;
+    bottom: 30px;
+    width: 12px;
+    height: 12px;
+    border-radius: var(--radius-full);
+    background: var(--color-success);
+    transition: all var(--transition-base) var(--easing-ease-out);
+}
+
+.statusIndicator.normal {
+    background: var(--color-primary);
+    box-shadow: 0 0 12px rgba(45, 95, 79, 0.4);
+}
+
+.statusIndicator.warning {
+    background: var(--color-warning);
+}
+
+.statusIndicator.completed {
+    background: var(--color-success);
+}
+
+/* -------------------- ANIMATIONS -------------------- */
+@keyframes timerPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+/* -------------------- RESPONSIVE DESIGN -------------------- */
+/* Tablets */
+@media (max-width: 768px) {
+    .timeValue {
+        font-size: 4rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .timeValue {
+        font-size: 3rem;
+    }
+
+    .progressRing {
+        filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+    }
+}
+
+/* -------------------- DARK MODE -------------------- */
+@media (prefers-color-scheme: dark) {
+    .progressRing {
+        filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.4));
+    }
+
+    .statusIndicator.normal {
+        box-shadow: 0 0 12px rgba(107, 175, 145, 0.6);
+    }
+}
+
+/* -------------------- ACCESSIBILITY -------------------- */
+@media (prefers-reduced-motion: reduce) {
+
+    .separator,
+    .timeValue,
+    .statusIndicator {
+        animation: none;
+    }
+
+    .progressFill {
+        transition: none;
+    }
+}
+
+/* Timercontrols.module · CSS */
+/* -------------------- CONTROLS CONTAINER -------------------- */
+.controlsContainer {
+    width: 100%;
+    padding: var(--space-6) var(--space-4);
+}
+
+.buttonsGroup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+}
+
+/* -------------------- ICONS -------------------- */
+.icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition-base) var(--easing-ease-out);
+}
+
+/* -------------------- RESPONSIVE DESIGN -------------------- */
+@media (max-width: 768px) {
+    .buttonsGroup {
+        gap: var(--space-3);
+    }
+}
+
+@media (max-width: 480px) {
+    .controlsContainer {
+        padding: var(--space-4) var(--space-3);
+    }
+
+    .buttonsGroup {
+        gap: var(--space-2);
+    }
+
+    .icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Timeradjustment.module · CSS */
+/* -------------------- ADJUSTMENT CONTAINER -------------------- */
+.adjustmentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-6) var(--space-4);
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+/* -------------------- ADJUSTMENT LABEL -------------------- */
+.adjustmentLabel {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* -------------------- ICONS -------------------- */
+.icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* -------------------- TIME DISPLAY -------------------- */
+.timeDisplay {
+    position: relative;
+    min-width: 80px;
+    text-align: center;
+}
+
+.timeValue {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    font-family: var(--font-mono);
+    letter-spacing: 0.05em;
+}
+
+/* -------------------- HINT TEXT -------------------- */
+.hint {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-tertiary);
+    text-align: center;
+    margin: 0;
+    font-style: italic;
+}
+
+/* -------------------- RESPONSIVE DESIGN -------------------- */
+@media (max-width: 768px) {
+    .adjustmentContainer {
+        padding: var(--space-4) var(--space-3);
+        gap: var(--space-3);
+    }
+
+    .icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .adjustmentContainer {
+        padding: var(--space-3) var(--space-2);
+    }
+
+    .icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .timeValue {
+        font-size: var(--font-size-base);
+    }
+}
+
+/* -------------------- ACCESSIBILITY -------------------- */
+@media (prefers-reduced-motion: reduce) {
+
+    .adjustmentContainer,
+    .icon,
+    .timeValue {
+        transition: none;
+        animation: none;
+    }
+}
+
+/* Timer.module.css */
+/* -------------------- OVERLAY -------------------- */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    padding: var(--space-4);
+    animation: fadeIn var(--transition-base) var(--easing-ease-out);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* -------------------- MODAL -------------------- */
+.modal {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8) var(--space-6);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-6);
+    max-height: 90vh;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+}
+
+/* -------------------- CLOSE BUTTON -------------------- */
+.closeButton {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    color: var(--color-text-primary);
+    font-size: var(--font-size-2xl);
+    cursor: pointer;
+    transition: all var(--transition-base) var(--easing-ease-out);
+    z-index: 10;
+
+    /* Remove default button styling */
+    padding: 0;
+    font-family: inherit;
+}
+
+.closeButton:hover {
+    background: var(--color-secondary);
+    color: var(--color-text-inverse);
+    transform: scale(1.1);
+}
+
+.closeButton:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.closeButton:active {
+    transform: scale(0.95);
+}
+
+/* -------------------- HEADER -------------------- */
+.header {
+    text-align: center;
+    width: 100%;
+}
+
+.subtaskName {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    margin: 0;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: 0.05em;
+}
+
+/* -------------------- TIMER SECTION -------------------- */
+.timerSection {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: var(--space-4) 0;
+}
+
+/* -------------------- COMPLETION OVERLAY -------------------- */
+.completionOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(74, 125, 107, 0.2), rgba(212, 165, 116, 0.15));
+    border-radius: var(--radius-xl);
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(2px);
+    z-index: 0;
+}
+
+.confetti {
+    font-size: 3rem;
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-30px);
+        opacity: 0.8;
+    }
+}
+
+/* -------------------- RESPONSIVE DESIGN -------------------- */
+@media (max-width: 768px) {
+    .modal {
+        padding: var(--space-6) var(--space-4);
+        gap: var(--space-4);
+    }
+
+    .taskName {
+        font-size: var(--font-size-2xl);
+    }
+
+    .subtaskName {
+        font-size: var(--font-size-base);
+    }
+}
+
+@media (max-width: 480px) {
+    .overlay {
+        padding: 0;
+    }
+
+    .modal {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 0;
+        max-height: 100vh;
+        padding: var(--space-4) var(--space-3);
+        gap: var(--space-3);
+    }
+
+    .subtaskName {
+        font-size: var(--font-size-sm);
+    }
+}
+
+/* -------------------- ACCESSIBILITY -------------------- */
+@media (prefers-reduced-motion: reduce) {
+
+    .overlay,
+    .modal,
+    .closeButton,
+    .confetti {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* -------------------- SCROLLBAR STYLING -------------------- */
+.modal::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.modal::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: var(--radius-full);
+}
+
+.modal::-webkit-scrollbar-thumb:hover {
+    background: var(--color-secondary);
+}
+
+/* Firefox scrollbar */
+.modal {
+    scrollbar-color: var(--color-secondary) transparent;
+    scrollbar-width: thin;
+}

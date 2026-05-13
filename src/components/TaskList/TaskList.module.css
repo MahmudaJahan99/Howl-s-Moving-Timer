@@ -181,12 +181,6 @@
   pointer-events: none;
 }
 
-.ctaButton {
-  margin-top: auto;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  background: transparent;
-}
-
 /* -------------------- HOVER & FOCUS STATES -------------------- */
 .taskCard:hover::before {
   transform:
@@ -227,10 +221,6 @@
 
 .taskCard:active {
   transform: translateY(-2px);
-}
-
-.taskCard:hover .ctaButton {
-  background: var(--task-color);
 }
 
 /* -------------------- BACKGROUND & EFFECTS -------------------- */
@@ -344,7 +334,7 @@
 
 .taskCard:hover .shine {
   opacity: 1;
-  animation: shimmerEffect 600ms ease-out;
+  animation: shimmer 600ms ease-out;
 }
 
 /* -------------------- TEXT CONTENT -------------------- */
@@ -356,28 +346,11 @@
   flex-direction: column;
 }
 
-.taskName {
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-primary);
-  margin: 0 0 0.25rem 0;
-  transition: color var(--transition-base) var(--easing-ease-out);
-  line-height: var(--line-height-tight);
-}
-
-.taskCard:hover .taskName {
+.taskCard:hover h3 {
   color: var(--task-color);
 }
 
-.taskDescription {
-  font-size: var(--font-size-xl);
-  color: var(--color-text-secondary);
-  margin: 0 0 0.75rem 0;
-  line-height: var(--line-height-normal);
-  transition: color var(--transition-base) var(--easing-ease-out);
-}
-
-.taskCard:hover .taskDescription {
+.taskCard:hover h4 {
   color: var(--color-text-primary);
 }
 
@@ -447,21 +420,6 @@
   }
 }
 
-@keyframes shimmerEffect {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-}
 
 /* -------------------- DARK MODE ADJUSTMENTS -------------------- */
 
@@ -491,8 +449,6 @@
   .iconContainer,
   .glowEffect,
   .shine,
-  .taskName,
-  .taskDescription,
   .subtaskCount,
   .arrowIndicator {
     transition: none;

@@ -1,0 +1,365 @@
+/* -------------------- SUBTASK CARD CONTAINER -------------------- */
+.subtaskCard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.05)),
+        linear-gradient(135deg, rgba(120, 220, 255, 0.18), rgba(130, 255, 180, 0.14), rgba(255, 255, 255, 0.08));
+    backdrop-filter: blur(18px) saturate(180%);
+    -webkit-backdrop-filter: blur(18px) saturate(180%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.25),
+        inset 0 -1px 1px rgba(255, 255, 255, 0.06);
+    transition: all var(--transition-base) var(--easing-ease-out);
+    cursor: pointer;
+    overflow: hidden;
+    isolation: isolate;
+    min-height: 180px;
+    font: inherit;
+    color: inherit;
+    border-radius: var(--radius-lg);
+
+    /* Remove default button styling */
+    background-color: transparent;
+    padding: 0;
+}
+
+.subtaskCard::before {
+    content: '';
+    position: absolute;
+    top: -120%;
+    left: -40%;
+    width: 60%;
+    height: 300%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.22), transparent);
+    transform: rotate(25deg);
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity var(--transition-base) var(--easing-ease-out);
+}
+
+/* -------------------- HOVER STATE -------------------- */
+.subtaskCard:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.18), 0 0 30px rgba(120, 220, 255, 0.18),
+        0 0 50px rgba(130, 255, 180, 0.14), inset 0 1px 1px rgba(255, 255, 255, 0.35);
+}
+
+.subtaskCard:hover::before {
+    opacity: 1;
+    transform: translateX(260%) rotate(25deg);
+    transition: transform var(--transition-slower) var(--easing-ease-out);
+}
+
+.subtaskCard:hover .cardGlow {
+    opacity: 1;
+}
+
+.subtaskCard:hover .subtaskName {
+    color: var(--task-color);
+}
+
+.subtaskCard:hover .durationBadge {
+    background: var(--task-color);
+    color: var(--color-text-inverse);
+}
+
+.subtaskCard:focus-visible {
+    outline: 2px solid var(--task-color);
+    outline-offset: 2px;
+}
+
+.subtaskCard:active {
+    transform: translateY(-2px);
+}
+
+/* -------------------- GLOW EFFECT -------------------- */
+.cardGlow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, var(--task-color), transparent 70%);
+    opacity: 0;
+    filter: blur(20px);
+    border-radius: var(--radius-lg);
+    pointer-events: none;
+    transition: opacity var(--transition-base) var(--easing-ease-out);
+    z-index: 0;
+}
+
+/* -------------------- CARD CONTENT -------------------- */
+.cardContent {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    text-align: center;
+    flex: 1;
+    width: 100%;
+}
+
+/* -------------------- TYPOGRAPHY -------------------- */
+.subtaskName {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    margin: 0;
+    transition: color var(--transition-base) var(--easing-ease-out);
+    line-height: var(--line-height-tight);
+}
+
+.subtaskDescription {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin: 0;
+    transition: color var(--transition-base) var(--easing-ease-out);
+}
+
+/* -------------------- DURATION BADGE -------------------- */
+.durationBadge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--gradient-start), var(--task-color), var(--gradient-end));
+    color: var(--color-text-inverse);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    margin-top: 0.5rem;
+    transition: all var(--transition-base) var(--easing-ease-out);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-sm);
+}
+
+.duration {
+    font-family: var(--font-mono);
+    letter-spacing: 0.05em;
+}
+
+/* -------------------- SHINE EFFECT -------------------- */
+.shine {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+    border-radius: var(--radius-lg);
+    pointer-events: none;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity var(--transition-base) var(--easing-ease-out);
+}
+
+.subtaskCard:hover .shine {
+    opacity: 1;
+    animation: shimmer 600ms ease-out;
+}
+
+/* -------------------- ACCESSIBILITY -------------------- */
+@media (prefers-reduced-motion: reduce) {
+
+    .subtaskCard,
+    .cardGlow,
+    .shine,
+    .subtaskName,
+    .durationBadge {
+        transition: none;
+        animation: none;
+    }
+
+    .subtaskCard:hover::before {
+        transition: none;
+    }
+}
+
+
+/* -------------------------- */
+/* -------------------- SUBTASK SELECTOR CONTAINER -------------------- */
+.subtaskSelectorContainer {
+    padding: var(--space-6) var(--space-4);
+    position: relative;
+    overflow: hidden;
+}
+
+/* -------------------- HEADER -------------------- */
+.header {
+    max-width: 1200px;
+    margin: 0 auto var(--space-12);
+    padding: var(--space-8) var(--space-6);
+}
+
+.backButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: var(--space-2) var(--space-4);
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: all var(--transition-base) var(--easing-ease-out);
+    margin-bottom: var(--space-4);
+}
+
+.backButton:hover {
+    background: var(--color-secondary);
+    color: var(--color-text-inverse);
+    border-color: var(--color-secondary);
+    transform: translateX(-2px);
+}
+
+.backButton:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.headerContent {
+    text-align: center;
+}
+
+.title {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-2) 0;
+    line-height: var(--line-height-tight);
+}
+
+.subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    margin: 0;
+    font-style: italic;
+}
+
+/* -------------------- SUBTASK GRID -------------------- */
+.subtaskGrid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    align-items: stretch;
+}
+
+/* -------------------- RESPONSIVE DESIGN -------------------- */
+/* Tablets */
+@media (min-width: 768px) {
+    .subtaskGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .title {
+        font-size: var(--font-size-3xl);
+    }
+}
+
+/* Laptops */
+@media (min-width: 1024px) {
+    .subtaskGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .header {
+        padding: var(--space-10) var(--space-8);
+    }
+}
+
+/* Extra large screens */
+@media (min-width: 1400px) {
+    .subtaskSelectorContainer {
+        padding: var(--space-8) var(--space-6);
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .subtaskSelectorContainer {
+        padding: var(--space-4) var(--space-3);
+    }
+
+    .header {
+        padding: var(--space-6) var(--space-4);
+        margin-bottom: var(--space-8);
+    }
+
+    .title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .subtitle {
+        font-size: var(--font-size-base);
+    }
+
+    .subtaskGrid {
+        gap: var(--space-4);
+    }
+}
+
+/* -------------------- DECORATIVE ELEMENTS -------------------- */
+.decorativeElements {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.floatingShape1 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(212, 165, 116, 0.15), transparent);
+    border-radius: 50%;
+    top: 10%;
+    right: 5%;
+    animation: float 6s ease-in-out infinite;
+    filter: blur(40px);
+}
+
+.floatingShape2 {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(45, 95, 79, 0.1), transparent);
+    border-radius: 50%;
+    bottom: 10%;
+    left: 5%;
+    animation: float 8s ease-in-out infinite;
+    animation-delay: 1s;
+    filter: blur(40px);
+}
+
+/* -------------------- ANIMATIONS -------------------- */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(30px);
+    }
+}
+
+/* -------------------- ACCESSIBILITY -------------------- */
+@media (prefers-reduced-motion: reduce) {
+
+    .subtaskSelectorContainer,
+    .header,
+    .backButton,
+    .floatingShape1,
+    .floatingShape2 {
+        animation: none;
+        transition: none;
+    }
+}

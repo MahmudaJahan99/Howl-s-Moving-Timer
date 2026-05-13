@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useNavigate } from 'react-router-dom'
 import styles from './TaskList.module.css'
 import { getRandomFact } from "../../utils/randomFact";
+import Button from "../common/Button";
 
 const TaskCard = ({ task, index }) => {
   const navigate = useNavigate()
@@ -81,28 +82,23 @@ const TaskCard = ({ task, index }) => {
         {/* Text content */}
         <div className={styles.textContent}>
           {/* Title */}
-          <h3 className={styles.taskName}>
-            {task.name}
-          </h3>
+          <h3>{task.name}</h3>
           {/* Tagline */}
-          <h4 className={styles.taskDescription}>
-            {task.tagline}
-          </h4>
+          <h4>{task.tagline}</h4>
           {/* Interesting Fact */}
           <p className="text-xs leading-relaxed mb-6 text-gray-600">
             {randomFact}
           </p>
 
           {/* Button */}
-          <button
+          <Button
+            variant="primary"
+            taskColor={task.themeColor}
             onClick={handleClick}
-            className={styles.ctaButton}
-            style={{
-              "--task-color": task.themeColor,
-            }}
+            ariaLabel={`Select ${task.name} time`}
           >
             Select {task.name.split(" ")[0].toLowerCase()} time →
-          </button>
+          </Button>
         </div>
       </div>
     </motion.div>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion } from 'framer-motion'
 import styles from './TaskList.module.css'
 import { getAllTasks } from "../../utils/taskManager";
 import TaskCard from "./TaskCard";
@@ -33,21 +34,41 @@ const TaskList = () => {
         )
     }
 
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.05,
+                delayChildren: 0.1,
+            },
+        },
+    }
+
     return (
         <section className={styles.taskList} aria-label="Available kitchen tasks">
-            <div className={styles.taskGrid}>
+            <motion.div
+                className={styles.taskGrid}
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+            >
                 {tasks.map((task, index) => (
-                    <div
+                    <motion.div
                         key={task.id}
                         className={styles.taskGridItem}
-                        style={{
-                            '--item-index': index,
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{
+                            delay: index * 0.1,
+                            duration: 0.5,
+                            ease: 'easeOut',
                         }}
                     >
                         <TaskCard task={task} index={index} />
-                    </div>
+                    </motion.div>
                 ))}
-            </div>
+            </motion.div>
         </section>
     );
 };
