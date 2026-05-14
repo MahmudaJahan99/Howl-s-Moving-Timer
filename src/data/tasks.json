@@ -126,7 +126,7 @@
     {
       "id": "water-motor",
       "name": "Water Motor",
-      "emoji": "💧",
+      "emoji": "./assets/images/water.png",
       "tagline": "Flow, fill, and flourish",
       "themeColor": "#5BA3C7",
       "gradientStart": "#D5E8F5",
@@ -167,7 +167,7 @@
     {
       "id": "brewing-tea",
       "name": "Brewing Tea",
-      "emoji": "🍵",
+      "emoji": "./assets/images/tea.png",
       "tagline": "Steep, sip, and serenity",
       "themeColor": "#8B7355",
       "gradientStart": "#E8DDD0",
