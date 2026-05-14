@@ -1,6 +1,6 @@
 /* -------------------- HERO SECTION -------------------- */
 .hero {
-  padding: var(--space-16) var(--space-4) var(--space-12);
+  padding: 4rem 1rem 3rem;
   text-align: center;
   position: relative;
   z-index: 10;
@@ -13,38 +13,30 @@
 
 /* -------------------- RESPONSIVE DESIGN -------------------- */
 @media (max-width: 768px) {
-  /* .hero {
-    padding: var(--space-12) var(--space-4) var(--space-8);
-  } */
-
   .title {
-    font-size: var(--font-size-4xl);
+    font-size: 2.25rem;
   }
 
   .subtitle {
-    font-size: var(--font-size-xl);
+    font-size: 1.25rem;
   }
 
   .tagline {
-    font-size: var(--font-size-base);
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
-  /* .hero {
-    padding: var(--space-8) var(--space-3) var(--space-6);
-  } */
-
   .title {
-    font-size: var(--font-size-3xl);
+    font-size: 1.875rem;
   }
 
   .subtitle {
-    font-size: var(--font-size-lg);
+    font-size: 1.125rem;
   }
 
   .tagline {
-    font-size: var(--font-size-sm);
+    font-size: 0.875rem;
   }
 }
 

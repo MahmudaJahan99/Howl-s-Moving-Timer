@@ -108,7 +108,6 @@ All CSS custom properties are defined in `/src/assets/styles/variables.css`:
 ```css
 --color-primary: #2d5f4f;
 --font-size-base: 1rem;
---space-4: 1rem;
 --radius-lg: 0.875rem;
 --shadow-md: 0 4px 6px var(--color-shadow-dark);
 --transition-base: 250ms;

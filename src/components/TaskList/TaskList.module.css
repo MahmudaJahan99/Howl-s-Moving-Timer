@@ -1,14 +1,14 @@
 /* -------------------- TASK LIST CONTAINER -------------------- */
 .taskList {
   width: 100%;
-  padding: var(--space-8) var(--space-4);
+  padding: 2rem 1rem;
 }
 
 /* -------------------- TASK GRID -------------------- */
 .taskGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-10);
+  gap: 2.5rem;
   max-width: 1200px;
   margin: 0 auto;
   align-items: stretch;
@@ -26,7 +26,7 @@
   justify-content: center;
   min-height: 400px;
   width: 100%;
-  padding: var(--space-8) var(--space-4);
+  padding: 2rem 1rem;
 }
 
 .loadingSpinner {
@@ -43,7 +43,7 @@
   height: 100%;
   border: 3px solid var(--color-border);
   border-top-color: var(--color-primary);
-  border-radius: var(--radius-full);
+  border-radius: 50%;
   animation: spin 1s linear infinite;
 }
 
@@ -51,7 +51,7 @@
 /* Tablets */
 @media (min-width: 768px) {
   .taskList {
-    padding: var(--space-6) var(--space-4);
+    padding: 1.5rem 1rem;
   }
 
   .taskGrid {
@@ -69,7 +69,7 @@
 /* Mobile adjustments */
 @media (max-width: 480px) {
   .taskList {
-    padding: var(--space-4) var(--space-3);
+    padding: 1rem 0.75rem;
   }
 }
 
@@ -110,7 +110,7 @@
   justify-content: space-between;
   width: 100%;
   padding: 1.5rem;
-  border-radius: var(--radius-lg);
+  border-radius: 0.875rem;
   overflow: hidden;
   isolation: isolate;
   cursor: pointer;
@@ -133,10 +133,10 @@
     inset 0 1px 1px rgba(255, 255, 255, 0.25),
     inset 0 -1px 1px rgba(255, 255, 255, 0.06);
   transition:
-    transform var(--transition-base) var(--easing-ease-out),
-    box-shadow var(--transition-base) var(--easing-ease-out),
-    border-color var(--transition-base) var(--easing-ease-out),
-    background var(--transition-base) var(--easing-ease-out);
+    transform 250ms var(--easing-ease-out),
+    box-shadow 250ms var(--easing-ease-out),
+    border-color 250ms var(--easing-ease-out),
+    background 250ms var(--easing-ease-out);
   transform: translateY(0) translateZ(0);
 
   /* Accessibility - remove default button styling */
@@ -157,7 +157,7 @@
       rgba(255, 255, 255, 0.22),
       transparent);
   transform: rotate(25deg);
-  transition: transform var(--transition-slower) var(--easing-ease-out);
+  transition: transform 500ms var(--easing-ease-out);
   z-index: 1;
   pointer-events: none;
 }
@@ -207,7 +207,7 @@
 }
 
 .taskCard:hover .icon {
-  animation: bounceIcon var(--transition-base) var(--easing-smooth);
+  animation: bounceIcon 250ms var(--easing-smooth);
 }
 
 .taskCard:hover .arrowIndicator {
@@ -232,8 +232,8 @@
       var(--task-color),
       transparent 60%);
   opacity: 0;
-  transition: opacity var(--transition-slow) var(--easing-ease-in-out);
-  border-radius: var(--radius-lg);
+  transition: opacity 350ms var(--easing-ease-in-out);
+  border-radius: 0.875rem;
   pointer-events: none;
 }
 
@@ -244,9 +244,9 @@
       var(--task-color),
       transparent 70%);
   opacity: 0;
-  transition: opacity var(--transition-base) var(--easing-ease-out);
+  transition: opacity 250ms var(--easing-ease-out);
   filter: blur(20px);
-  border-radius: var(--radius-lg);
+  border-radius: 0.875rem;
   pointer-events: none;
 }
 
@@ -257,7 +257,7 @@
   z-index: 0;
   pointer-events: none;
   opacity: 0;
-  transition: opacity var(--transition-base);
+  transition: opacity 250ms;
 }
 
 .taskCard:hover .cardGlow {
@@ -282,12 +282,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius-md);
+  border-radius: 0.5rem;
   backdrop-filter: blur(12px);
   box-shadow:
     inset 0 1px 1px rgba(255, 255, 255, 0.25),
     0 8px 18px rgba(0, 0, 0, 0.08);
-  transition: all var(--transition-base) var(--easing-ease-out);
+  transition: all 250ms var(--easing-ease-out);
 }
 
 .taskCard:hover .iconContainer {
@@ -311,7 +311,7 @@
   align-items: center;
   justify-content: center;
   height: 50%;
-  transition: all var(--transition-base) var(--easing-ease-out);
+  transition: all 250ms var(--easing-ease-out);
 }
 
 .taskCard:hover .icon {
@@ -326,10 +326,10 @@
       transparent 30%,
       rgba(255, 255, 255, 0.1) 50%,
       transparent 70%);
-  border-radius: var(--radius-lg);
+  border-radius: 0.875rem;
   pointer-events: none;
   opacity: 0;
-  transition: opacity var(--transition-base) var(--easing-ease-out);
+  transition: opacity 250ms var(--easing-ease-out);
 }
 
 .taskCard:hover .shine {
@@ -364,13 +364,13 @@
 
 .subtaskCount {
   display: inline-block;
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-medium);
+  font-size: 0.75rem;
+  font-weight: 500;
   color: var(--color-text-tertiary);
   background: var(--color-bg-tertiary);
   padding: 0.25rem 0.75rem;
-  border-radius: var(--radius-full);
-  transition: all var(--transition-base) var(--easing-ease-out);
+  border-radius: 50%;
+  transition: all 250ms var(--easing-ease-out);
 }
 
 .taskCard:hover .subtaskCount {
@@ -390,7 +390,7 @@
   align-items: center;
   justify-content: center;
   color: var(--color-text-secondary);
-  transition: all var(--transition-base) var(--easing-ease-out);
+  transition: all 250ms var(--easing-ease-out);
 }
 
 .taskCard:hover .arrowIndicator {

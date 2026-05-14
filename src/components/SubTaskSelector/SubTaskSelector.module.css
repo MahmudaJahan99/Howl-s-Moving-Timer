@@ -7,7 +7,7 @@
     justify-content: center;
     width: 100%;
     padding: 1.5rem;
-    border-radius: var(--radius-lg);
+    border-radius: 0.875rem;
     border: 1px solid rgba(255, 255, 255, 0.22);
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.05)),
         linear-gradient(135deg, rgba(120, 220, 255, 0.18), rgba(130, 255, 180, 0.14), rgba(255, 255, 255, 0.08));
@@ -15,14 +15,14 @@
     -webkit-backdrop-filter: blur(18px) saturate(180%);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.25),
         inset 0 -1px 1px rgba(255, 255, 255, 0.06);
-    transition: all var(--transition-base) var(--easing-ease-out);
+    transition: all 250ms var(--easing-ease-out);
     cursor: pointer;
     overflow: hidden;
     isolation: isolate;
     min-height: 180px;
     font: inherit;
     color: inherit;
-    border-radius: var(--radius-lg);
+    border-radius: 0.875rem;
 
     /* Remove default button styling */
     background-color: transparent;
@@ -41,7 +41,7 @@
     z-index: 1;
     pointer-events: none;
     opacity: 0;
-    transition: opacity var(--transition-base) var(--easing-ease-out);
+    transition: opacity 250ms var(--easing-ease-out);
 }
 
 /* -------------------- HOVER STATE -------------------- */
@@ -55,7 +55,7 @@
 .subtaskCard:hover::before {
     opacity: 1;
     transform: translateX(260%) rotate(25deg);
-    transition: transform var(--transition-slower) var(--easing-ease-out);
+    transition: transform 500ms var(--easing-ease-out);
 }
 
 .subtaskCard:hover .cardGlow {
@@ -87,9 +87,9 @@
     background: radial-gradient(circle at top left, var(--task-color), transparent 70%);
     opacity: 0;
     filter: blur(20px);
-    border-radius: var(--radius-lg);
+    border-radius: 0.875rem;
     pointer-events: none;
-    transition: opacity var(--transition-base) var(--easing-ease-out);
+    transition: opacity 250ms var(--easing-ease-out);
     z-index: 0;
 }
 
@@ -109,19 +109,19 @@
 
 /* -------------------- TYPOGRAPHY -------------------- */
 .subtaskName {
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-semibold);
+    font-size: 1.25rem;
+    font-weight: 600;
     color: var(--color-text-primary);
     margin: 0;
-    transition: color var(--transition-base) var(--easing-ease-out);
-    line-height: var(--line-height-tight);
+    transition: color 250ms var(--easing-ease-out);
+    line-height: 1.2;
 }
 
 .subtaskDescription {
-    font-size: var(--font-size-sm);
+    font-size: 0.875rem;
     color: var(--color-text-secondary);
     margin: 0;
-    transition: color var(--transition-base) var(--easing-ease-out);
+    transition: color 250ms var(--easing-ease-out);
 }
 
 /* -------------------- DURATION BADGE -------------------- */
@@ -132,11 +132,11 @@
     background: linear-gradient(135deg, var(--gradient-start), var(--task-color), var(--gradient-end));
     color: var(--color-text-inverse);
     padding: 0.5rem 1rem;
-    border-radius: var(--radius-full);
+    border-radius: 50%;
     margin-top: 0.5rem;
-    transition: all var(--transition-base) var(--easing-ease-out);
-    font-weight: var(--font-weight-semibold);
-    font-size: var(--font-size-sm);
+    transition: all 250ms var(--easing-ease-out);
+    font-weight: 600;
+    font-size: 0.875rem;
 }
 
 .duration {
@@ -149,11 +149,11 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
-    border-radius: var(--radius-lg);
+    border-radius: 0.875rem;
     pointer-events: none;
     opacity: 0;
     z-index: 1;
-    transition: opacity var(--transition-base) var(--easing-ease-out);
+    transition: opacity 250ms var(--easing-ease-out);
 }
 
 .subtaskCard:hover .shine {
@@ -182,7 +182,7 @@
 /* -------------------------- */
 /* -------------------- SUBTASK SELECTOR CONTAINER -------------------- */
 .subtaskSelectorContainer {
-    padding: var(--space-6) var(--space-4);
+    padding: 1.5rem 1rem;
     position: relative;
     overflow: hidden;
 }
@@ -190,24 +190,24 @@
 /* -------------------- HEADER -------------------- */
 .header {
     max-width: 1200px;
-    margin: 0 auto var(--space-12);
-    padding: var(--space-8) var(--space-6);
+    margin: 0 auto 3rem;
+    padding: 2rem 1.5rem;
 }
 
 .backButton {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: var(--space-2) var(--space-4);
+    padding: 0.5rem 1rem;
     background: transparent;
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
+    border-radius: 0.5rem;
     color: var(--color-text-primary);
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-medium);
+    font-size: 0.875rem;
+    font-weight: 500;
     cursor: pointer;
-    transition: all var(--transition-base) var(--easing-ease-out);
-    margin-bottom: var(--space-4);
+    transition: all 250ms var(--easing-ease-out);
+    margin-bottom: 1rem;
 }
 
 .backButton:hover {
@@ -227,15 +227,15 @@
 }
 
 .title {
-    font-size: var(--font-size-4xl);
-    font-weight: var(--font-weight-bold);
+    font-size: 2.25rem;
+    font-weight: 700;
     color: var(--color-text-primary);
-    margin: 0 0 var(--space-2) 0;
-    line-height: var(--line-height-tight);
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
 }
 
 .subtitle {
-    font-size: var(--font-size-lg);
+    font-size: 1.125rem;
     color: var(--color-text-secondary);
     margin: 0;
     font-style: italic;
@@ -247,7 +247,7 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--space-6);
+    gap: 1.5rem;
     align-items: stretch;
 }
 
@@ -259,7 +259,7 @@
     }
 
     .title {
-        font-size: var(--font-size-3xl);
+        font-size: 1.875rem;
     }
 }
 
@@ -270,38 +270,38 @@
     }
 
     .header {
-        padding: var(--space-10) var(--space-8);
+        padding: 2.5rem 2rem;
     }
 }
 
 /* Extra large screens */
 @media (min-width: 1400px) {
     .subtaskSelectorContainer {
-        padding: var(--space-8) var(--space-6);
+        padding: 2rem 1.5rem;
     }
 }
 
 /* Mobile */
 @media (max-width: 480px) {
     .subtaskSelectorContainer {
-        padding: var(--space-4) var(--space-3);
+        padding: 1rem 0.75rem;
     }
 
     .header {
-        padding: var(--space-6) var(--space-4);
-        margin-bottom: var(--space-8);
+        padding: 1.5rem 1rem;
+        margin-bottom: 2rem;
     }
 
     .title {
-        font-size: var(--font-size-2xl);
+        font-size: 1.5rem;
     }
 
     .subtitle {
-        font-size: var(--font-size-base);
+        font-size: 1rem;
     }
 
     .subtaskGrid {
-        gap: var(--space-4);
+        gap: 1rem;
     }
 }
 
