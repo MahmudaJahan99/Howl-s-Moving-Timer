@@ -3,23 +3,16 @@
     align-items: center;
     justify-content: center;
     gap: 0.6rem;
-
     padding: 0.9rem 1.4rem;
-
     border: none;
-
     font: inherit;
     font-weight: 600;
-
     cursor: pointer;
-
     transition:
         transform 0.25s ease,
         background 0.25s ease,
         box-shadow 0.25s ease;
-
     backdrop-filter: blur(10px);
-
     box-shadow:
         0 8px 24px rgba(0, 0, 0, 0.12),
         inset 0 1px 1px rgba(255, 255, 255, 0.2);
@@ -27,7 +20,6 @@
     color: white;
 }
 
-/* Border Radius */
 .default {
     border-radius: 0.5rem;
 }
@@ -53,7 +45,6 @@ button:hover {
 }
 
 /* Variants */
-
 .primary {
     background: var(--task-color);
     color: white;
@@ -74,7 +65,6 @@ button:hover {
 }
 
 /* Icon */
-
 .icon {
     display: flex;
     align-items: center;

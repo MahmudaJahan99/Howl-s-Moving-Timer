@@ -10,6 +10,12 @@
     box-sizing: border-box;
 }
 
+/* Firefox scrollbar */
+* {
+    scrollbar-color: var(--color-info) var(--color-bg-primary);
+    scrollbar-width: thin;
+}
+
 html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
@@ -149,29 +155,6 @@ p {
     background: var(--color-secondary-dark);
 }
 
-/* Firefox scrollbar */
-* {
-    scrollbar-color: var(--color-info) var(--color-bg-primary);
-    scrollbar-width: thin;
-}
-
-/* -------------------- RESPONSIVE TYPOGRAPHY -------------------- */
-@media (max-width: 48rem) {
-    h1 {
-        font-size: 2.25rem;
-    }
-
-    body {
-        font-size: 0.875rem;
-    }
-}
-
-@media (min-width: 2560px) {
-    body {
-        zoom: 1.5;
-    }
-}
-
 /* -------------------- SPARKLE EFFECTS -------------------- */
 .sparkle-layer {
     position: fixed;
@@ -225,5 +208,22 @@ p {
                 0) rotate(var(--spark-rotate-end)) scale(0.5);
 
         opacity: 0;
+    }
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.25rem;
+    }
+
+    body {
+        font-size: 0.875rem;
+    }
+}
+
+@media (min-width: 2560px) {
+    body {
+        zoom: 1.5;
     }
 }

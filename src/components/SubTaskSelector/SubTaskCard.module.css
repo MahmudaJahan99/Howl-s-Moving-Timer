@@ -1,0 +1,179 @@
+/* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- SUBTASK CARD CONTAINER -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+.subtaskCard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 0.875rem;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.05)),
+        linear-gradient(135deg, rgba(120, 220, 255, 0.18), rgba(130, 255, 180, 0.14), rgba(255, 255, 255, 0.08));
+    backdrop-filter: blur(18px) saturate(180%);
+    -webkit-backdrop-filter: blur(18px) saturate(180%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.25),
+        inset 0 -1px 1px rgba(255, 255, 255, 0.06);
+    transition: all 250ms var(--easing-ease-out);
+    cursor: pointer;
+    overflow: hidden;
+    isolation: isolate;
+    min-height: 180px;
+    font: inherit;
+    color: inherit;
+    border-radius: 0.875rem;
+
+    /* Remove default button styling */
+    background-color: transparent;
+    padding: 0;
+}
+
+.subtaskCard::before {
+    content: '';
+    position: absolute;
+    top: -120%;
+    left: -40%;
+    width: 60%;
+    height: 300%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.22), transparent);
+    transform: rotate(25deg);
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 250ms var(--easing-ease-out);
+}
+
+/* -------------------- HOVER STATE -------------------- */
+.subtaskCard:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.18), 0 0 30px rgba(120, 220, 255, 0.18),
+        0 0 50px rgba(130, 255, 180, 0.14), inset 0 1px 1px rgba(255, 255, 255, 0.35);
+}
+
+.subtaskCard:hover::before {
+    opacity: 1;
+    transform: translateX(260%) rotate(25deg);
+    transition: transform 500ms var(--easing-ease-out);
+}
+
+.subtaskCard:hover .cardGlow {
+    opacity: 1;
+}
+
+.subtaskCard:hover .subtaskName {
+    color: var(--task-color);
+}
+
+.subtaskCard:hover .durationBadge {
+    background: var(--task-color);
+    color: var(--color-text-inverse);
+}
+
+.subtaskCard:focus-visible {
+    outline: 2px solid var(--task-color);
+    outline-offset: 2px;
+}
+
+.subtaskCard:active {
+    transform: translateY(-2px);
+}
+
+/* -------------------- GLOW EFFECT -------------------- */
+.cardGlow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, var(--task-color), transparent 70%);
+    opacity: 0;
+    filter: blur(20px);
+    border-radius: 0.875rem;
+    pointer-events: none;
+    transition: opacity 250ms var(--easing-ease-out);
+    z-index: 0;
+}
+
+/* -------------------- CARD CONTENT -------------------- */
+.cardContent {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    text-align: center;
+    flex: 1;
+    width: 100%;
+}
+
+/* -------------------- TYPOGRAPHY -------------------- */
+.subtaskName {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin: 0;
+    transition: color 250ms var(--easing-ease-out);
+    line-height: 1.2;
+}
+
+.subtaskDescription {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+    transition: color 250ms var(--easing-ease-out);
+}
+
+/* -------------------- DURATION BADGE -------------------- */
+.durationBadge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--gradient-start), var(--task-color), var(--gradient-end));
+    color: var(--color-text-inverse);
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    margin-top: 0.5rem;
+    transition: all 250ms var(--easing-ease-out);
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.duration {
+    font-family: var(--font-mono);
+    letter-spacing: 0.05em;
+}
+
+/* -------------------- SHINE EFFECT -------------------- */
+.shine {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+    border-radius: 0.875rem;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 250ms var(--easing-ease-out);
+}
+
+.subtaskCard:hover .shine {
+    opacity: 1;
+    animation: shimmer 600ms ease-out;
+}
+
+/* -------------------- ACCESSIBILITY -------------------- */
+@media (prefers-reduced-motion: reduce) {
+
+    .subtaskCard,
+    .cardGlow,
+    .shine,
+    .subtaskName,
+    .durationBadge {
+        transition: none;
+        animation: none;
+    }
+
+    .subtaskCard:hover::before {
+        transition: none;
+    }
+}

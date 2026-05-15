@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import styles from './SubtaskSelector.module.css'
+import styles from './SubTaskCard.module.css'
 
 const SubTaskCard = ({ subtask, task, onSelect, index }) => {
     const cardVariants = {
