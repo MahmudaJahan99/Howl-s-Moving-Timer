@@ -1,0 +1,31 @@
+/* -------------------- CONTROLS CONTAINER -------------------- */
+.controlsContainer {
+    width: 100%;
+    padding: 1.5rem 1rem;
+}
+
+/* -------------------- BUTTONS GROUP -------------------- */
+.buttonsGroup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* -------------------- ICONS -------------------- */
+.icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 250ms var(--easing-ease-out);
+}
+
+/* -------------------- RESPONSIVE DESIGN -------------------- */
+@media (max-width: 768px) {
+    .controlsContainer {
+        padding: 1rem 0.75rem;
+    }
+}

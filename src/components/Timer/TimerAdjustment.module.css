@@ -1,0 +1,78 @@
+/* -------------------- ADJUSTMENT CONTAINER -------------------- */
+.adjustmentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+    border-radius: 0.875rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+/* -------------------- ADJUSTMENT LABEL -------------------- */
+.adjustmentLabel {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* -------------------- BUTTONS GROUP -------------------- */
+.buttonsGroup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* -------------------- ICONS -------------------- */
+.icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* -------------------- TIME DISPLAY -------------------- */
+.timeDisplay {
+    position: relative;
+    min-width: 80px;
+    text-align: center;
+}
+
+.timeValue {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    font-family: var(--font-mono);
+    letter-spacing: 0.05em;
+}
+
+/* -------------------- HINT TEXT -------------------- */
+.hint {
+    font-size: 0.75rem;
+    color: var(--color-text-tertiary);
+    text-align: center;
+    margin: 0;
+    font-style: italic;
+}
+
+/* -------------------- ACCESSIBILITY -------------------- */
+@media (prefers-reduced-motion: reduce) {
+
+    .adjustmentContainer,
+    .icon,
+    .timeValue {
+        transition: none;
+        animation: none;
+    }
+}

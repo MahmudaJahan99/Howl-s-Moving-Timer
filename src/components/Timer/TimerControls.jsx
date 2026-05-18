@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import styles from './Timer.module.css'
+import styles from './TimerControls.module.css'
 import Button from '../common/Button';
 
 const TimerControls = ({ isRunning,
@@ -8,7 +8,8 @@ const TimerControls = ({ isRunning,
     onPause,
     onResume,
     onReset,
-    taskColor, }) => {
+    taskColor,
+    hasStarted, }) => {
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -30,7 +31,7 @@ const TimerControls = ({ isRunning,
         >
             <div className={styles.buttonsGroup}>
                 {/* Play/Pause Button */}
-                {!isRunning && !isCompleted && (
+                {!isRunning && !isCompleted && !hasStarted && (
                     <Button
                         variant="primary"
                         taskColor={taskColor}
@@ -63,7 +64,7 @@ const TimerControls = ({ isRunning,
                 )}
 
                 {/* Resume Button (when paused) */}
-                {!isRunning && !isCompleted && (
+                {!isRunning && !isCompleted && hasStarted && (
                     <Button
                         variant="primary"
                         taskColor={taskColor}

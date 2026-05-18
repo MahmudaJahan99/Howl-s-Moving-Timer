@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import styles from './Timer.module.css'
+import styles from './TimerAdjustment.module.css'
 import Button from '../common/Button'
 
 const TimerAdjustment = ({
@@ -37,18 +37,16 @@ const TimerAdjustment = ({
                 </Button>
 
                 {/* Time display */}
-                <div className={styles.timeDisplay}>
-                    <motion.div
-                        key={Math.floor(remainingSeconds / 60)}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.8 }}
-                        transition={{ duration: 0.2 }}
-                        className={styles.timeValue}
-                    >
-                        {Math.floor(remainingSeconds / 60)} min
-                    </motion.div>
-                </div>
+                <motion.div
+                    key={Math.floor(remainingSeconds / 60)}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
+                    transition={{ duration: 0.2 }}
+                    className={styles.timeValue}
+                >
+                    {Math.floor(remainingSeconds / 60)} min
+                </motion.div>
 
                 {/* Increase button */}
                 <Button

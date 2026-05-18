@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import { useTimer } from '../../hooks/useTimer'
-import { useSound, soundManager } from '../../hooks/useSound'
+import { useSound } from '../../hooks/useSound'
 import { minutesToSeconds } from '../../utils/constants'
 import TimerDisplay from './TimerDisplay'
 import TimerControls from './TimerControls'
@@ -10,7 +10,7 @@ import TimerAdjustment from './TimerAdjustment'
 import styles from './Timer.module.css'
 import Button from '../common/Button'
 
-const Timer = ({ task, subtask, onClose }) => {
+const Timer = ({ task, subtask }) => {
     const navigate = useNavigate()
 
     // Initialize timer with subtask duration
@@ -20,9 +20,7 @@ const Timer = ({ task, subtask, onClose }) => {
     // Initialize sounds
     const completionSound = useSound('/assets/sounds/timer-complete.mp3')
 
-    /**
-     * Handle timer completion
-     */
+    /* Handle timer completion */
     useEffect(() => {
         if (timer.isCompleted) {
             // Play looping sound
@@ -38,9 +36,7 @@ const Timer = ({ task, subtask, onClose }) => {
         }
     }, [timer.isCompleted, subtask, task, completionSound])
 
-    /**
-     * Handle closing the timer
-     */
+    /* Handle closing the timer */
     const handleClose = () => {
         // Stop any playing sounds
         completionSound.stop()
@@ -52,9 +48,7 @@ const Timer = ({ task, subtask, onClose }) => {
         navigate('/')
     }
 
-    /**
-     * Handle completing and closing
-     */
+    /* Handle completing and closing */
     const handleComplete = () => {
         completionSound.stop()
         timer.reset()
@@ -129,15 +123,15 @@ const Timer = ({ task, subtask, onClose }) => {
                     </Button>
 
                     {/* Header */}
-                    <motion.div
+                    <motion.h2
                         className={styles.header}
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
                     >
-                        <h2 className={styles.taskName}>{task.name}</h2>
-                        <p className={styles.subtaskName}>{subtask.name}</p>
-                    </motion.div>
+                        <span className={styles.taskName}>{task.name}</span>
+                        <span className={styles.subtaskName}>({subtask.name})</span>
+                    </motion.h2>
 
                     {/* Timer display */}
                     <motion.div
@@ -174,6 +168,7 @@ const Timer = ({ task, subtask, onClose }) => {
                         onResume={timer.resume}
                         onReset={timer.isCompleted ? handleComplete : timer.reset}
                         taskColor={task.themeColor}
+                        hasStarted={timer.remainingSeconds !== timer.totalSeconds}
                     />
 
                     {/* Completion animation */}

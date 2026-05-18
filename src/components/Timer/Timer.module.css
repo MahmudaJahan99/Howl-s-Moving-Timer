@@ -1,342 +1,4 @@
-/* Timerdisplay.module · CSS */
 /* -------------------- TIMER DISPLAY CONTAINER -------------------- */
-.timerDisplayContainer {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    aspect-ratio: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* -------------------- PROGRESS RING SVG -------------------- */
-.progressRing {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    transform: rotate(-90deg);
-    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.12));
-}
-
-.progressBg {
-    fill: none;
-    stroke: var(--color-border);
-    stroke-width: 8;
-    opacity: 0.3;
-}
-
-.progressFill {
-    fill: none;
-    stroke: var(--task-color);
-    stroke-width: 8;
-    stroke-linecap: round;
-    stroke-dasharray: 879.6;
-    stroke-dashoffset: 879.6;
-    transition: stroke-dashoffset 0.3s ease-out, filter 0.3s ease-out;
-    opacity: 0.95;
-    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.1));
-}
-
-/* -------------------- TIME DISPLAY -------------------- */
-.timeDisplay {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.timeContainer {
-    position: relative;
-    height: 140px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.timeValue {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    gap: 0.2em;
-    font-family: var(--font-mono);
-    font-weight: 700;
-    font-size: 5rem;
-    color: var(--color-text-primary);
-    line-height: 1;
-    letter-spacing: -0.02em;
-}
-
-.minutes {
-    display: inline-block;
-}
-
-.separator {
-    margin: 0 0.1em;
-    opacity: 0.7;
-    animation: blink 1s ease-in-out infinite;
-}
-
-.seconds {
-    display: inline-block;
-}
-
-@keyframes blink {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.5;
-    }
-}
-
-/* -------------------- COMPLETED LABEL -------------------- */
-.completedLabel {
-    position: absolute;
-    bottom: 20px;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-success);
-    text-align: center;
-}
-
-/* -------------------- STATUS INDICATOR -------------------- */
-.statusIndicator {
-    position: absolute;
-    bottom: 30px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--color-success);
-    transition: all 250ms var(--easing-ease-out);
-}
-
-.statusIndicator.normal {
-    background: var(--color-primary);
-    box-shadow: 0 0 12px rgba(45, 95, 79, 0.4);
-}
-
-.statusIndicator.warning {
-    background: var(--color-warning);
-}
-
-.statusIndicator.completed {
-    background: var(--color-success);
-}
-
-/* -------------------- ANIMATIONS -------------------- */
-@keyframes timerPulse {
-
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.02);
-    }
-}
-
-/* -------------------- RESPONSIVE DESIGN -------------------- */
-/* Tablets */
-@media (max-width: 768px) {
-    .timeValue {
-        font-size: 4rem;
-    }
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-    .timeValue {
-        font-size: 3rem;
-    }
-
-    .progressRing {
-        filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
-    }
-}
-
-/* -------------------- DARK MODE -------------------- */
-@media (prefers-color-scheme: dark) {
-    .progressRing {
-        filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.4));
-    }
-
-    .statusIndicator.normal {
-        box-shadow: 0 0 12px rgba(107, 175, 145, 0.6);
-    }
-}
-
-/* -------------------- ACCESSIBILITY -------------------- */
-@media (prefers-reduced-motion: reduce) {
-
-    .separator,
-    .timeValue,
-    .statusIndicator {
-        animation: none;
-    }
-
-    .progressFill {
-        transition: none;
-    }
-}
-
-/* Timercontrols.module · CSS */
-/* -------------------- CONTROLS CONTAINER -------------------- */
-.controlsContainer {
-    width: 100%;
-    padding: 1.5rem 1rem;
-}
-
-.buttonsGroup {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-/* -------------------- ICONS -------------------- */
-.icon {
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 250ms var(--easing-ease-out);
-}
-
-/* -------------------- RESPONSIVE DESIGN -------------------- */
-@media (max-width: 768px) {
-    .buttonsGroup {
-        gap: 0.75rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .controlsContainer {
-        padding: 1rem 0.75rem;
-    }
-
-    .buttonsGroup {
-        gap: 0.5rem;
-    }
-
-    .icon {
-        width: 20px;
-        height: 20px;
-    }
-}
-
-/* Timeradjustment.module · CSS */
-/* -------------------- ADJUSTMENT CONTAINER -------------------- */
-.adjustmentContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.5rem 1rem;
-    border-radius: 0.875rem;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.15);
-}
-
-/* -------------------- ADJUSTMENT LABEL -------------------- */
-.adjustmentLabel {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--color-text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-/* -------------------- ICONS -------------------- */
-.icon {
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-/* -------------------- TIME DISPLAY -------------------- */
-.timeDisplay {
-    position: relative;
-    min-width: 80px;
-    text-align: center;
-}
-
-.timeValue {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--color-text-primary);
-    font-family: var(--font-mono);
-    letter-spacing: 0.05em;
-}
-
-/* -------------------- HINT TEXT -------------------- */
-.hint {
-    font-size: 0.75rem;
-    color: var(--color-text-tertiary);
-    text-align: center;
-    margin: 0;
-    font-style: italic;
-}
-
-/* -------------------- RESPONSIVE DESIGN -------------------- */
-@media (max-width: 768px) {
-    .adjustmentContainer {
-        padding: 1rem 0.75rem;
-        gap: 0.75rem;
-    }
-
-    .icon {
-        width: 20px;
-        height: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .adjustmentContainer {
-        padding: 0.75rem 0.5rem;
-    }
-
-    .icon {
-        width: 18px;
-        height: 18px;
-    }
-
-    .timeValue {
-        font-size: 1rem;
-    }
-}
-
-/* -------------------- ACCESSIBILITY -------------------- */
-@media (prefers-reduced-motion: reduce) {
-
-    .adjustmentContainer,
-    .icon,
-    .timeValue {
-        transition: none;
-        animation: none;
-    }
-}
-
-/* Timer.module.css */
-/* -------------------- OVERLAY -------------------- */
 .overlay {
     position: fixed;
     inset: 0;
@@ -364,19 +26,20 @@
 /* -------------------- MODAL -------------------- */
 .modal {
     position: relative;
-    width: 100%;
-    max-width: 600px;
-    background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+    width: min(92vw, 420px);
+    background: linear-gradient(135deg,
+            var(--color-bg-primary),
+            var(--color-bg-secondary));
     border-radius: 1.25rem;
-    padding: 2rem 1.5rem;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.15);
+    padding: 1.25rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
-    max-height: 90vh;
+    gap: 1rem;
+    max-height: 95vh;
+    overflow-x: hidden;
     overflow-y: auto;
     scrollbar-gutter: stable;
 }
@@ -423,13 +86,18 @@
 /* -------------------- HEADER -------------------- */
 .header {
     text-align: center;
-    width: 100%;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.taskName {
+    font-size: 1.5rem;
 }
 
 .subtaskName {
-    font-size: 1.125rem;
+    font-size: 1rem;
     color: var(--color-text-secondary);
-    margin: 0;
     font-weight: 500;
     letter-spacing: 0.05em;
 }
@@ -439,7 +107,6 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 1rem 0;
 }
 
 /* -------------------- COMPLETION OVERLAY -------------------- */
@@ -475,41 +142,6 @@
     }
 }
 
-/* -------------------- RESPONSIVE DESIGN -------------------- */
-@media (max-width: 768px) {
-    .modal {
-        padding: 1.5rem 1rem;
-        gap: 1rem;
-    }
-
-    .taskName {
-        font-size: 1.5rem;
-    }
-
-    .subtaskName {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .overlay {
-        padding: 0;
-    }
-
-    .modal {
-        width: 100%;
-        max-width: 100%;
-        border-radius: 0;
-        max-height: 100vh;
-        padding: 1rem 0.75rem;
-        gap: 0.75rem;
-    }
-
-    .subtaskName {
-        font-size: 0.875rem;
-    }
-}
-
 /* -------------------- ACCESSIBILITY -------------------- */
 @media (prefers-reduced-motion: reduce) {
 
@@ -520,28 +152,4 @@
         animation: none;
         transition: none;
     }
-}
-
-/* -------------------- SCROLLBAR STYLING -------------------- */
-.modal::-webkit-scrollbar {
-    width: 8px;
-}
-
-.modal::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.modal::-webkit-scrollbar-thumb {
-    background: var(--color-border);
-    border-radius: 50%;
-}
-
-.modal::-webkit-scrollbar-thumb:hover {
-    background: var(--color-secondary);
-}
-
-/* Firefox scrollbar */
-.modal {
-    scrollbar-color: var(--color-secondary) transparent;
-    scrollbar-width: thin;
 }

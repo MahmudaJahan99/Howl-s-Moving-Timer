@@ -27,17 +27,6 @@ export const SOUNDS = {
 }
 
 /**
- * Format seconds into MM:SS format
- * @param {number} totalSeconds - Total seconds to format
- * @returns {string} Formatted time string (MM:SS)
- */
-export function formatTime(totalSeconds) {
-  const minutes = Math.floor(totalSeconds / 60)
-  const seconds = totalSeconds % 60
-  return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`
-}
-
-/**
  * Format time for display in larger format
  * @param {number} totalSeconds - Total seconds
  * @returns {object} Object with minutes and seconds
